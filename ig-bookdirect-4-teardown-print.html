@@ -1,0 +1,1682 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Villas Sabai Jai — Book Direct 4 · The Teardown Edition (Print)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+
+  :root {
+    --cream:      #F4EDE1;
+    --cream-soft: #FAF6EC;
+    --paper:      #FBF5E7;
+    --ink:        #0F3D3E;
+    --ink-soft:   #1f4f50;
+    --ink-deep:   #0a2021;
+    --plum:       #3D3548;
+    --peach:      #E8997A;
+    --apricot:    #E8C296;
+    --gold:       #FAB702;
+    --red:        #E53935;   /* annotation red */
+    --line:       rgba(15,61,62,0.18);
+    --rule:       rgba(15,61,62,0.22);
+    --mute:       rgba(15,61,62,0.55);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: #fff; }
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; }
+
+  .slide {
+    width: 1080px; height: 1350px;
+    page-break-after: always; break-after: page;
+    position: relative; isolation: isolate; overflow: hidden;
+    background: var(--cream); color: var(--ink);
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+
+  .bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+  .scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .content {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; flex-direction: column;
+    padding: 80px 85px;
+  }
+
+  .eyebrow { font: 500 22px/1 "Inter", sans-serif; letter-spacing: 0.32em; text-transform: uppercase; }
+  .pager { display: flex; justify-content: space-between; align-items: baseline; }
+  .pager .num { font: 300 35px/1 "Fraunces", serif; font-style: italic; opacity: 0.5; }
+
+  /* Caveat / red-pen shared */
+  .annot {
+    position: absolute;
+    font-family: "Caveat", "Bradley Hand", cursive;
+    color: var(--red);
+    pointer-events: none;
+  }
+  .annot-text { font: 600 40px/1.05 "Caveat", cursive; color: var(--red); }
+  .annot-text span { display: block; font-weight: 500; font-size: 32px; margin-top: 4px; }
+
+  /* —————————————————————————————————————————————
+     SLIDE 1 — HOOK · mock search-result card
+     ————————————————————————————————————————————— */
+  .s1 { background: var(--cream); }
+  .s1 .content { justify-content: space-between; padding: 70px 85px; }
+  .s1 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s1 .top .logo { font: 300 32px/1 "Fraunces", serif; font-style: italic; color: var(--ink); opacity: 0.9; }
+  .s1 .top .kicker {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--ink); opacity: 0.6;
+  }
+  .s1 .top .kicker::before { content: "— "; }
+
+  /* Hero thesis — lives above the listing card */
+  .s1 .hero {
+    font: 300 76px/1.02 "Fraunces", Georgia, serif;
+    font-style: italic;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    text-align: center;
+    margin: 10px auto 0;
+    max-width: 900px;
+  }
+  .s1 .hero em { font-style: italic; color: var(--peach); }
+
+  /* ——————————————————————————————————————————————
+     OTA search-listing card (Booking × Agoda hybrid)
+     —————————————————————————————————————————————— */
+  .s1 .listing-wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 780px;
+    transform: rotate(-1.2deg);
+  }
+  .s1 .listing {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+      0 36px 80px -28px rgba(15,61,62,0.38),
+      0 12px 28px -14px rgba(15,61,62,0.20),
+      0 0 0 1px rgba(15,61,62,0.08);
+    font-family: "Inter", sans-serif;
+  }
+
+  /* Top site-chrome strip */
+  .s1 .listing .hdr {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 11px 18px;
+    background: #1a5cbd;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+  }
+  .s1 .listing .hdr .brand {
+    font: 700 18px/1 "Inter", sans-serif;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+  .s1 .listing .hdr .brand .dot { color: #ffcc33; font-weight: 700; }
+  .s1 .listing .hdr .hdr-meta {
+    font: 500 11px/1 "Inter", sans-serif;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.82);
+  }
+
+  /* Photo area with overlays */
+  .s1 .listing .photo {
+    height: 210px;
+    background:
+      radial-gradient(60% 50% at 30% 40%, rgba(232,194,150,0.75), rgba(232,194,150,0) 65%),
+      radial-gradient(50% 50% at 80% 80%, rgba(232,153,122,0.55), rgba(232,153,122,0) 70%),
+      linear-gradient(170deg, #d8c8ae 0%, #b9a88a 60%, #8e785a 100%);
+    position: relative;
+  }
+  .s1 .listing .photo::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(-20deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 12px);
+  }
+  .s1 .listing .photo-badge {
+    position: absolute; top: 14px; left: 14px;
+    background: #d23b3b;
+    color: #fff;
+    font: 800 15px/1 "Inter", sans-serif;
+    letter-spacing: 0.08em;
+    padding: 9px 13px;
+    border-radius: 3px;
+    box-shadow: 0 6px 16px rgba(210,59,59,0.45);
+    transform: rotate(-3deg);
+  }
+  .s1 .listing .photo-heart {
+    position: absolute; top: 14px; right: 14px;
+    width: 34px; height: 34px;
+    background: rgba(255,255,255,0.94);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font: 500 20px/1 "Inter", sans-serif;
+    color: #1a1a1a;
+  }
+  .s1 .listing .photo-count {
+    position: absolute; bottom: 14px; right: 14px;
+    background: rgba(0,0,0,0.72);
+    color: #fff;
+    font: 500 11px/1 "Inter", sans-serif;
+    padding: 5px 9px;
+    border-radius: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Body */
+  .s1 .listing .body { padding: 16px 20px 14px; }
+
+  .s1 .listing .row1 {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 20px;
+  }
+  .s1 .listing .name {
+    font: 700 22px/1.15 "Inter", sans-serif;
+    color: #0057b8;
+    letter-spacing: -0.005em;
+  }
+  .s1 .listing .type {
+    margin-top: 4px;
+    font: 500 11px/1 "Inter", sans-serif;
+    color: #6b6b6b;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .s1 .listing .score-col { text-align: right; white-space: nowrap; }
+  .s1 .listing .stars {
+    font: 400 18px/1 "Inter", sans-serif;
+    color: #f5a623;
+    letter-spacing: 0.04em;
+  }
+  .s1 .listing .stars .half { color: rgba(245,166,35,0.28); }
+  .s1 .listing .starline {
+    margin-top: 4px;
+    font: 500 11px/1 "Inter", sans-serif;
+    color: #8a8a8a;
+    letter-spacing: 0.02em;
+  }
+
+  .s1 .listing .loc {
+    display: flex; align-items: center; gap: 7px;
+    margin-top: 10px;
+    font: 600 12px/1 "Inter", sans-serif;
+    color: #2f7a34;
+    letter-spacing: 0.02em;
+  }
+  .s1 .listing .loc .pin { width: 10px; height: 13px; flex-shrink: 0; color: #2f7a34; }
+
+  .s1 .listing .hr {
+    margin: 12px 0 12px;
+    height: 1px;
+    background: rgba(26,26,26,0.08);
+  }
+
+  .s1 .listing .row2 {
+    display: flex; gap: 20px; align-items: flex-start;
+  }
+  .s1 .listing .score-box {
+    display: flex; gap: 10px; align-items: center;
+    flex-shrink: 0;
+  }
+  .s1 .listing .score-box .sc-num {
+    background: #1a5cbd;
+    color: #fff;
+    font: 800 22px/1 "Inter", sans-serif;
+    letter-spacing: -0.01em;
+    padding: 9px 11px;
+    border-radius: 6px 6px 6px 2px;
+    min-width: 28px; text-align: center;
+  }
+  .s1 .listing .score-box .sc-label {
+    font: 700 13px/1 "Inter", sans-serif;
+    color: #1a1a1a;
+  }
+  .s1 .listing .score-box .sc-sub {
+    margin-top: 4px;
+    font: 400 11px/1 "Inter", sans-serif;
+    color: #8a8a8a;
+  }
+
+  .s1 .listing .policies {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .s1 .listing .policies .chk {
+    font: 600 12px/1.1 "Inter", sans-serif;
+    color: #2f7a34;
+    padding-left: 16px;
+    position: relative;
+  }
+  .s1 .listing .policies .chk::before {
+    content: "✓";
+    position: absolute; left: 0; top: 0;
+    font-weight: 800;
+    color: #2f7a34;
+  }
+
+  .s1 .listing .scarcity {
+    margin-top: 12px;
+    padding: 8px 11px;
+    background: #fff4e5;
+    border-left: 3px solid #e38900;
+    font: 700 12px/1.2 "Inter", sans-serif;
+    color: #c55f00;
+    letter-spacing: 0.03em;
+  }
+  .s1 .listing .scarcity::before {
+    content: "● ";
+    color: #e38900;
+    font-size: 8px;
+    margin-right: 4px;
+    vertical-align: 2px;
+  }
+
+  /* Price row */
+  .s1 .listing .priceRow {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 20px 16px;
+    background: #fafaf6;
+    border-top: 1px solid rgba(26,26,26,0.08);
+  }
+  .s1 .listing .price-wrap { display: flex; flex-direction: column; gap: 2px; }
+  .s1 .listing .price-line {
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .s1 .listing .was {
+    font: 500 14px/1 "Inter", sans-serif;
+    color: #9a9a9a;
+    text-decoration: line-through;
+  }
+  .s1 .listing .now {
+    font: 800 28px/1 "Inter", sans-serif;
+    color: #d23b3b;
+    letter-spacing: -0.01em;
+  }
+  .s1 .listing .incl {
+    font: 400 11px/1 "Inter", sans-serif;
+    color: #8a8a8a;
+    letter-spacing: 0.02em;
+  }
+  .s1 .listing .btn {
+    background: #0071c2;
+    color: #fff;
+    padding: 13px 22px;
+    border-radius: 4px;
+    font: 700 13px/1 "Inter", sans-serif;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 12px rgba(0,113,194,0.28);
+  }
+
+  /* Slide 1 annotations — two in margins */
+  .s1 .annot-1 {
+    left: 10px; top: 1020px;
+    width: 240px;
+  }
+  .s1 .annot-1 svg {
+    width: 210px; height: 60px;
+    transform: translate(30px, -10px) rotate(6deg);
+  }
+  .s1 .annot-1 .tx {
+    font: 600 38px/1.05 "Caveat", cursive;
+    color: var(--red);
+    transform: rotate(-4deg);
+    margin-top: -8px; margin-left: 14px;
+    white-space: nowrap;
+  }
+  .s1 .annot-2 {
+    right: 10px; top: 905px;
+    width: 260px;
+    text-align: right;
+  }
+  .s1 .annot-2 svg {
+    width: 200px; height: 60px;
+    transform: translate(-10px, -10px) rotate(-4deg);
+    margin-left: auto; display: block;
+  }
+  .s1 .annot-2 .tx {
+    font: 600 38px/1.05 "Caveat", cursive;
+    color: var(--red);
+    transform: rotate(3deg);
+    margin-top: -6px;
+    white-space: nowrap;
+  }
+  /* Swipe indicator bottom */
+  .s1 .swipe-row {
+    display: flex; justify-content: space-between; align-items: center;
+    font: 500 18px/1 "Inter", sans-serif;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink); opacity: 0.55;
+  }
+  .s1 .swipe-row .swipe svg { width: 46px; height: 20px; vertical-align: middle; margin-left: 14px; }
+
+  /* —————————————————————————————————————————————
+     SLIDE 2 — SHOCK · dark, one red strikethrough
+     ————————————————————————————————————————————— */
+  .s2 { background: var(--ink-deep); color: #fff; }
+  .s2::before {
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(60% 55% at 50% 38%, rgba(229,57,53,0.10), transparent 72%),
+      radial-gradient(50% 40% at 50% 88%, rgba(232,194,150,0.08), transparent 75%);
+  }
+  .s2 .content { justify-content: space-between; }
+  .s2 .pager .eyebrow { color: var(--apricot); opacity: 0.9; }
+  .s2 .pager .num { color: rgba(255,255,255,0.45); }
+  .s2 .core {
+    display: flex; flex-direction: column; justify-content: center;
+    flex: 1;
+  }
+  .s2 .core .kicker {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--apricot);
+    margin-bottom: 34px;
+  }
+  .s2 .core h2 {
+    font: 300 124px/1.02 "Fraunces", Georgia, serif;
+    font-style: italic;
+    letter-spacing: -0.012em;
+  }
+  .s2 .core h2 em { font-style: italic; color: var(--apricot); }
+  .s2 .core h2 .strike {
+    position: relative; color: #fff;
+  }
+  .s2 .core h2 .strike::after {
+    content: ""; position: absolute;
+    left: -8px; right: -8px; top: 54%;
+    height: 7px;
+    background: var(--red);
+    transform: rotate(-2.2deg);
+    border-radius: 2px;
+  }
+  .s2 .core .sub {
+    margin-top: 46px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+    font: 400 28px/1.5 "Inter", sans-serif;
+    color: rgba(255,255,255,0.78);
+    max-width: 820px;
+  }
+  .s2 .core .sub em { font-style: italic; color: var(--apricot); }
+  .s2 .tail {
+    display: flex; justify-content: space-between;
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  /* —————————————————————————————————————————————
+     SLIDE 3 — TRAP · split receipts compare
+     ————————————————————————————————————————————— */
+  .s3 { background: var(--cream); }
+  .s3 .content { justify-content: space-between; padding: 70px 60px; }
+  .s3 .top { display: flex; justify-content: space-between; align-items: center; padding: 0 25px; }
+  .s3 .top .kicker {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+  }
+  .s3 .top .num {
+    font: 300 30px/1 "Fraunces", serif; font-style: italic;
+    color: var(--ink); opacity: 0.5;
+  }
+  .s3 h3 {
+    font: 300 58px/1.08 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+    padding: 0 25px;
+    max-width: 880px;
+  }
+  .s3 h3 em { font-style: italic; color: var(--peach); }
+
+  /* Receipt compare wrapper */
+  .s3 .compare {
+    position: relative;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 38px;
+    padding: 0 20px;
+    flex: 1;
+    align-items: start;
+  }
+  .s3 .rcp {
+    background: var(--paper);
+    border-radius: 8px;
+    padding: 28px 26px 26px;
+    box-shadow:
+      0 22px 48px -22px rgba(15,61,62,0.3),
+      0 0 0 1px rgba(15,61,62,0.05);
+    font-family: "JetBrains Mono", monospace;
+    position: relative;
+  }
+  .s3 .rcp::before, .s3 .rcp::after {
+    content: ""; position: absolute; left: 0; right: 0; height: 12px;
+    background: radial-gradient(circle at 6px 6px, transparent 5.5px, var(--paper) 6px) repeat-x;
+    background-size: 12px 12px;
+  }
+  .s3 .rcp::before { top: -6px; }
+  .s3 .rcp::after { bottom: -6px; transform: scaleY(-1); }
+
+  .s3 .rcp .brand {
+    font: 700 22px/1.1 "Inter", sans-serif;
+    color: #1a1a1a;
+    letter-spacing: 0.02em;
+    padding-bottom: 10px;
+    border-bottom: 1.5px dashed rgba(26,26,26,0.28);
+  }
+  .s3 .rcp .brand .dot { color: #9a9a9a; font-weight: 400; }
+  .s3 .rcp .brand small {
+    display: block;
+    font: 400 11px/1.2 "Inter", sans-serif;
+    color: #8a8a8a;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .s3 .rcp .title {
+    font: 500 14px/1 "Inter", sans-serif;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #1a1a1a;
+    padding: 14px 0 8px;
+  }
+  .s3 .rcp .ln {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px dashed rgba(26,26,26,0.18);
+    font: 400 15px/1.25 "JetBrains Mono", monospace;
+    color: #2a2a2a;
+  }
+  .s3 .rcp .ln .k { color: #7a7a7a; }
+  .s3 .rcp .ln .v { text-align: right; color: #1a1a1a; font-weight: 500; }
+  .s3 .rcp.good .ln.perk .v { color: #1a1a1a; font-weight: 600; }
+  .s3 .rcp.good .ln.perk .k { color: #2a2a2a; }
+  .s3 .rcp.bad .ln .v.empty { color: #b8b8b8; letter-spacing: 0.12em; }
+  .s3 .rcp .tot {
+    display: grid; grid-template-columns: 1fr auto;
+    padding: 14px 0 2px;
+    margin-top: 6px;
+    border-top: 1.5px dashed rgba(26,26,26,0.35);
+    font: 700 16px/1.2 "Inter", sans-serif;
+  }
+  .s3 .rcp .tot .k { color: #1a1a1a; letter-spacing: 0.06em; text-transform: uppercase; }
+  .s3 .rcp .tot .v { text-align: right; color: #1a1a1a; }
+
+  /* Annotations slide 3 — all in margins around/between cards */
+  .s3 .annot-gap {
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    top: 20px;
+    width: 320px;
+    text-align: center;
+  }
+  .s3 .annot-gap svg {
+    width: 300px; height: 50px;
+    display: block; margin: 0 auto 4px;
+  }
+  .s3 .annot-gap .tx {
+    font: 600 34px/1.05 "Caveat", cursive;
+    color: var(--red);
+    transform: rotate(-2deg);
+    white-space: nowrap;
+  }
+  .s3 .annot-bracket {
+    position: absolute;
+    right: 5px; top: 290px;
+    width: 280px;
+  }
+  .s3 .annot-bracket svg {
+    width: 40px; height: 220px;
+    stroke: var(--red);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+  }
+  .s3 .annot-bracket .tx {
+    position: absolute;
+    top: 70px; right: 10px;
+    font: 600 34px/1.05 "Caveat", cursive;
+    color: var(--red);
+    transform: rotate(4deg);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .s3 .caption {
+    font: 400 20px/1.4 "Inter", sans-serif;
+    color: var(--mute);
+    text-align: center;
+    padding: 0 25px;
+    font-style: italic;
+  }
+
+  /* —————————————————————————————————————————————
+     SLIDE 4 — PERK 1 · mock Sabai Massage invoice
+     ————————————————————————————————————————————— */
+  .s4 { background: var(--cream); }
+  .s4 .content { justify-content: space-between; padding: 70px 85px; }
+  .s4 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s4 .top .eyebrow { color: var(--ink); opacity: 0.55; }
+  .s4 .top .num { font: 300 30px/1 "Fraunces", serif; font-style: italic; color: var(--ink); opacity: 0.5; }
+  .s4 .hd {
+    margin-top: 18px;
+  }
+  .s4 .hd .kicker {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+    margin-bottom: 18px;
+  }
+  .s4 .hd h3 {
+    font: 300 66px/1.08 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s4 .hd h3 em { font-style: italic; color: var(--peach); }
+
+  /* Invoice mock */
+  .s4 .invoice-wrap {
+    position: relative;
+    margin: 30px 0 20px;
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .s4 .invoice {
+    background: var(--paper);
+    width: 640px;
+    padding: 42px 46px 38px;
+    border-radius: 6px;
+    box-shadow:
+      0 32px 60px -24px rgba(15,61,62,0.3),
+      0 0 0 1px rgba(15,61,62,0.05);
+    font-family: "JetBrains Mono", monospace;
+    transform: rotate(-0.8deg);
+    position: relative;
+  }
+  .s4 .invoice::before, .s4 .invoice::after {
+    content: ""; position: absolute; left: 0; right: 0; height: 14px;
+    background: radial-gradient(circle at 7px 7px, transparent 6.5px, var(--paper) 7px) repeat-x;
+    background-size: 14px 14px;
+  }
+  .s4 .invoice::before { top: -7px; }
+  .s4 .invoice::after { bottom: -7px; transform: scaleY(-1); }
+
+  .s4 .invoice .hd-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 16px;
+    border-bottom: 1.5px dashed rgba(26,26,26,0.28);
+  }
+  .s4 .invoice .brand {
+    font: 700 24px/1.1 "Inter", sans-serif;
+    color: #1a1a1a;
+  }
+  .s4 .invoice .brand small {
+    display: block;
+    font: 400 12px/1.2 "Inter", sans-serif;
+    color: #8a8a8a;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-top: 5px;
+  }
+  .s4 .invoice .rno {
+    text-align: right;
+    font: 500 12px/1.3 "Inter", sans-serif;
+    color: #6a6a6a;
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .s4 .invoice .rno strong {
+    display: block;
+    font: 700 17px/1 "JetBrains Mono", monospace;
+    color: #1a1a1a;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+  .s4 .invoice .title {
+    font: 500 15px/1 "Inter", sans-serif;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: #1a1a1a;
+    padding: 18px 0 12px;
+  }
+  .s4 .invoice .ln {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px dashed rgba(26,26,26,0.18);
+    font: 400 17px/1.25 "JetBrains Mono", monospace;
+    color: #2a2a2a;
+  }
+  .s4 .invoice .ln .k { color: #3a3a3a; }
+  .s4 .invoice .ln .v { text-align: right; font-weight: 600; color: #1a1a1a; }
+  .s4 .invoice .ln.disc .k { color: #1a1a1a; font-weight: 600; }
+  .s4 .invoice .ln.disc .v { color: #1a1a1a; }
+  .s4 .invoice .tot {
+    display: grid; grid-template-columns: 1fr auto;
+    padding: 16px 0 2px;
+    margin-top: 10px;
+    border-top: 1.5px dashed rgba(26,26,26,0.35);
+    font: 700 20px/1.2 "Inter", sans-serif;
+  }
+  .s4 .invoice .tot .k { color: #1a1a1a; letter-spacing: 0.06em; text-transform: uppercase; }
+  .s4 .invoice .tot .v { text-align: right; color: #1a1a1a; }
+  .s4 .invoice .foot {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(26,26,26,0.18);
+    display: flex; justify-content: space-between;
+    font: 400 12px/1.4 "Inter", sans-serif;
+    color: #7a7a7a;
+    letter-spacing: 0.08em;
+  }
+
+  /* Slide 4 — single margin annotation (left margin arrow → disc line) */
+  .s4 .annot-arrow {
+    position: absolute;
+    left: 20px; top: 600px;
+    width: 200px;
+  }
+  .s4 .annot-arrow svg {
+    width: 180px; height: 60px;
+  }
+  .s4 .annot-arrow .tx {
+    position: absolute;
+    left: 0; top: -50px;
+    font: 600 32px/1.1 "Caveat", cursive;
+    color: var(--red);
+    transform: rotate(-4deg);
+    width: 230px;
+  }
+  .s4 .annot-arrow .tx span { display: block; font-weight: 500; font-size: 28px; }
+
+  .s4 .anchor {
+    font: 400 18px/1.4 "Inter", sans-serif;
+    color: var(--mute);
+    text-align: center;
+    font-style: italic;
+    padding-top: 12px;
+  }
+
+  /* —————————————————————————————————————————————
+     SLIDE 5 — PERK 2 · bank-transfer confirmation
+     ————————————————————————————————————————————— */
+  .s5 { background: var(--cream); }
+  .s5 .content { justify-content: space-between; padding: 70px 85px; }
+  .s5 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s5 .top .eyebrow { color: var(--ink); opacity: 0.55; }
+  .s5 .top .num { font: 300 30px/1 "Fraunces", serif; font-style: italic; color: var(--ink); opacity: 0.5; }
+  .s5 .hd { margin-top: 18px; }
+  .s5 .hd .kicker {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+    margin-bottom: 18px;
+  }
+  .s5 .hd h3 {
+    font: 300 66px/1.08 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s5 .hd h3 em { font-style: italic; color: var(--peach); }
+
+  .s5 .tr-wrap {
+    position: relative;
+    margin: 30px 0 20px;
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .s5 .transfer {
+    background: var(--paper);
+    width: 660px;
+    padding: 40px 46px 36px;
+    border-radius: 6px;
+    box-shadow:
+      0 32px 60px -24px rgba(15,61,62,0.3),
+      0 0 0 1px rgba(15,61,62,0.05);
+    font-family: "JetBrains Mono", monospace;
+    transform: rotate(1deg);
+    position: relative;
+  }
+  .s5 .transfer .hdr {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 14px;
+    border-bottom: 1.5px dashed rgba(26,26,26,0.28);
+  }
+  .s5 .transfer .brand {
+    font: 700 22px/1.1 "Inter", sans-serif;
+    color: #1a1a1a;
+  }
+  .s5 .transfer .brand small {
+    display: block;
+    font: 400 12px/1.2 "Inter", sans-serif;
+    color: #8a8a8a;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-top: 5px;
+  }
+  .s5 .transfer .bdg {
+    text-align: right;
+    font: 500 11px/1.3 "Inter", sans-serif;
+    color: #6a6a6a;
+    letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .s5 .transfer .bdg strong {
+    display: block;
+    font: 700 15px/1 "JetBrains Mono", monospace;
+    color: #1a1a1a;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+  .s5 .transfer .ttl {
+    font: 500 14px/1 "Inter", sans-serif;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: #1a1a1a;
+    padding: 16px 0 10px;
+  }
+  .s5 .transfer .ln {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(26,26,26,0.18);
+    font: 400 15px/1.25 "JetBrains Mono", monospace;
+    color: #2a2a2a;
+  }
+  .s5 .transfer .ln .k { color: #7a7a7a; }
+  .s5 .transfer .ln .v { text-align: right; font-weight: 600; color: #1a1a1a; }
+  .s5 .transfer .ln.pos .v { color: #1a1a1a; }
+  .s5 .transfer .ln.pos .k { color: #3a3a3a; font-weight: 500; }
+  .s5 .transfer .tot {
+    display: grid; grid-template-columns: 1fr auto;
+    padding: 16px 0 2px;
+    margin-top: 10px;
+    border-top: 1.5px dashed rgba(26,26,26,0.35);
+    font: 700 20px/1.2 "Inter", sans-serif;
+  }
+  .s5 .transfer .tot .k { color: #1a1a1a; letter-spacing: 0.06em; text-transform: uppercase; }
+  .s5 .transfer .tot .v { text-align: right; color: #1a1a1a; }
+  .s5 .transfer .foot {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(26,26,26,0.18);
+    font: 400 12px/1.4 "Inter", sans-serif;
+    color: #7a7a7a;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  /* Slide 5 annotation — right-margin arrow → total */
+  .s5 .annot-right {
+    position: absolute;
+    right: 10px; top: 690px;
+    width: 250px;
+    text-align: right;
+  }
+  .s5 .annot-right svg {
+    width: 190px; height: 60px;
+    margin-left: auto; display: block;
+  }
+  .s5 .annot-right .tx {
+    position: absolute;
+    right: 10px; top: -70px;
+    font: 600 32px/1.1 "Caveat", cursive;
+    color: var(--red);
+    transform: rotate(3deg);
+    width: 280px;
+    text-align: right;
+  }
+  .s5 .annot-right .tx span { display: block; font-weight: 500; font-size: 26px; }
+
+  .s5 .anchor {
+    font: 400 18px/1.4 "Inter", sans-serif;
+    color: var(--mute);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* —————————————————————————————————————————————
+     SLIDE 6 — ARRIVAL CHECKLIST · red ticks only
+     ————————————————————————————————————————————— */
+  .s6 { background: var(--cream); }
+  .s6 .content { justify-content: space-between; padding: 70px 85px; }
+  .s6 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s6 .top .eyebrow { color: var(--ink); opacity: 0.55; }
+  .s6 .top .num { font: 300 30px/1 "Fraunces", serif; font-style: italic; color: var(--ink); opacity: 0.5; }
+  .s6 .hd { margin-top: 18px; }
+  .s6 .hd .kicker {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+    margin-bottom: 18px;
+  }
+  .s6 .hd h3 {
+    font: 300 62px/1.08 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s6 .hd h3 em { font-style: italic; color: var(--peach); }
+
+  .s6 .card-wrap {
+    margin: 24px 0;
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .s6 .card {
+    background: var(--paper);
+    width: 780px;
+    padding: 52px 60px 48px;
+    border-radius: 6px;
+    box-shadow:
+      0 32px 60px -24px rgba(15,61,62,0.28),
+      0 0 0 1px rgba(15,61,62,0.05);
+    transform: rotate(-0.5deg);
+    position: relative;
+  }
+  .s6 .card::before {
+    content: "— ARRIVAL · DIRECT BOOKER";
+    position: absolute;
+    top: -14px; left: 30px;
+    background: var(--paper);
+    padding: 4px 14px;
+    font: 500 14px/1 "Inter", sans-serif;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: #7a7a7a;
+    border: 1px dashed rgba(26,26,26,0.25);
+    border-radius: 4px;
+  }
+  .s6 .card .tt {
+    font: 500 16px/1 "Inter", sans-serif;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1.5px dashed rgba(26,26,26,0.28);
+  }
+  .s6 .card .row {
+    display: grid; grid-template-columns: 68px 1fr;
+    gap: 22px;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px dashed rgba(26,26,26,0.15);
+  }
+  .s6 .card .row:last-of-type { border-bottom: none; }
+  .s6 .card .tick {
+    font-family: "Caveat", cursive;
+    font-weight: 600;
+    font-size: 54px;
+    color: var(--red);
+    line-height: 1;
+    transform: rotate(-6deg);
+    display: inline-block;
+    padding-top: 4px;
+  }
+  .s6 .card .txt {
+    font: 400 26px/1.35 "Inter", sans-serif;
+    color: #1a1a1a;
+  }
+  .s6 .card .txt strong {
+    font-weight: 600;
+  }
+  .s6 .card .txt em {
+    font-style: italic;
+    color: #5a5a5a;
+    font-weight: 400;
+  }
+  .s6 .card .stamp {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1.5px dashed rgba(26,26,26,0.28);
+    text-align: center;
+  }
+  .s6 .card .stamp .caveat {
+    font: 600 38px/1 "Caveat", cursive;
+    color: var(--red);
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+  .s6 .anchor {
+    font: 400 18px/1.4 "Inter", sans-serif;
+    color: var(--mute);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* —————————————————————————————————————————————
+     SLIDE 7 — PERK · rooms-available dropdown
+     ————————————————————————————————————————————— */
+  .s7 { background: var(--cream); }
+  .s7 .content { justify-content: space-between; padding: 70px 85px; }
+  .s7 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s7 .top .eyebrow { color: var(--ink); opacity: 0.55; }
+  .s7 .top .num { font: 300 30px/1 "Fraunces", serif; font-style: italic; color: var(--ink); opacity: 0.5; }
+  .s7 .hd { margin-top: 18px; }
+  .s7 .hd .kicker {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+    margin-bottom: 18px;
+  }
+  .s7 .hd h3 {
+    font: 300 60px/1.08 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s7 .hd h3 em { font-style: italic; color: var(--peach); }
+
+  /* Room selector mock */
+  .s7 .selector-wrap {
+    margin: 26px 0 20px;
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .s7 .selector {
+    background: #fff;
+    width: 680px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow:
+      0 32px 60px -24px rgba(15,61,62,0.28),
+      0 0 0 1px rgba(15,61,62,0.07);
+    transform: rotate(-0.5deg);
+  }
+  .s7 .selector .label {
+    padding: 18px 24px;
+    font: 500 14px/1 "Inter", sans-serif;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #7a7a7a;
+    background: #f6f3ee;
+    border-bottom: 1px solid rgba(15,61,62,0.08);
+  }
+  .s7 .selector .room {
+    padding: 22px 26px;
+    border-bottom: 1px solid rgba(15,61,62,0.07);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 22px;
+  }
+  .s7 .selector .room:last-child { border-bottom: none; }
+  .s7 .selector .room .info h5 {
+    font: 600 20px/1.2 "Inter", sans-serif;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+  .s7 .selector .room .info p {
+    font: 400 14px/1.3 "Inter", sans-serif;
+    color: #7a7a7a;
+  }
+  .s7 .selector .room .price {
+    font: 600 22px/1 "Inter", sans-serif;
+    color: #1a1a1a;
+    text-align: right;
+  }
+  .s7 .selector .room .price .sm {
+    display: block;
+    font-weight: 400; font-size: 12px;
+    color: #8a8a8a; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-top: 4px;
+  }
+  .s7 .selector .room.selected {
+    background: #fffbe5;
+    border-left: 4px solid var(--gold);
+    padding-left: 22px;
+  }
+  .s7 .selector .room.selected .info h5 { color: #1a1a1a; }
+  .s7 .selector .room.locked {
+    background: #f4f1ec;
+    opacity: 0.7;
+  }
+  .s7 .selector .room.locked .info h5,
+  .s7 .selector .room.locked .info p,
+  .s7 .selector .room.locked .price { color: #a9a9a9; }
+  .s7 .selector .room.locked .price .lock {
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 14px;
+    color: #a9a9a9;
+  }
+
+  /* Slide 7 annotation — bottom margin arrow → locked room */
+  .s7 .annot-up {
+    position: absolute;
+    right: 50px; bottom: 10px;
+    width: 360px;
+    text-align: right;
+  }
+  .s7 .annot-up svg {
+    width: 120px; height: 90px;
+    margin-left: auto; display: block;
+  }
+  .s7 .annot-up .tx {
+    position: absolute;
+    right: 0; bottom: 100px;
+    font: 600 34px/1.1 "Caveat", cursive;
+    color: var(--red);
+    transform: rotate(-3deg);
+    width: 360px;
+    text-align: right;
+  }
+  .s7 .annot-up .tx span { display: block; font-weight: 500; font-size: 28px; }
+
+  .s7 .proseline {
+    font: 400 22px/1.4 "Inter", sans-serif;
+    color: var(--ink);
+    text-align: center;
+    padding-top: 14px;
+    font-style: italic;
+  }
+  .s7 .proseline em { color: var(--peach); }
+
+  /* —————————————————————————————————————————————
+     SLIDE 8 — LEDGER · handwritten accounting pad
+     ————————————————————————————————————————————— */
+  .s8 { background: var(--cream); }
+  .s8 .content { justify-content: space-between; padding: 65px 85px; }
+  .s8 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s8 .top .eyebrow { color: var(--ink); opacity: 0.55; }
+  .s8 .top .num { font: 300 30px/1 "Fraunces", serif; font-style: italic; color: var(--ink); opacity: 0.5; }
+  .s8 .hd { margin-top: 14px; }
+  .s8 .hd .kicker {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+    margin-bottom: 12px;
+  }
+  .s8 .hd h3 {
+    font: 300 54px/1.1 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s8 .hd h3 em { font-style: italic; color: var(--peach); }
+
+  .s8 .pad-wrap {
+    margin: 22px 0;
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .s8 .pad {
+    background: #fdfaf0;
+    width: 780px;
+    padding: 46px 72px 42px;
+    border-radius: 4px;
+    box-shadow:
+      0 24px 50px -22px rgba(15,61,62,0.32),
+      0 0 0 1px rgba(15,61,62,0.06);
+    transform: rotate(-0.4deg);
+    position: relative;
+    /* Ruled-paper lines */
+    background-image:
+      linear-gradient(180deg, transparent 0, transparent 57px, rgba(15,61,62,0.08) 57px, rgba(15,61,62,0.08) 58px, transparent 58px);
+    background-size: 100% 58px;
+    background-position: 0 0;
+  }
+  .s8 .pad::before {
+    content: "";
+    position: absolute;
+    left: 55px; top: 0; bottom: 0;
+    width: 1.5px;
+    background: rgba(229,57,53,0.35);
+  }
+  .s8 .pad .tx {
+    font: 600 32px/58px "Caveat", cursive;
+    color: #1a1a1a;
+  }
+  .s8 .pad .tx .pen {
+    color: var(--red);
+    font-weight: 600;
+  }
+  .s8 .pad .rule {
+    font: 600 32px/58px "Caveat", cursive;
+    color: var(--red);
+    letter-spacing: 0.02em;
+  }
+  .s8 .pad .closer {
+    margin-top: 6px;
+    font: 600 48px/1.2 "Caveat", cursive;
+    color: var(--red);
+    transform: rotate(-1.2deg);
+    text-align: center;
+    padding: 14px 0 4px;
+  }
+  .s8 .anchor {
+    font: 400 18px/1.4 "Inter", sans-serif;
+    color: var(--mute);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* —————————————————————————————————————————————
+     SLIDE 9 — CTA · dark, clean, zero red
+     ————————————————————————————————————————————— */
+  .s9 { background: var(--ink-deep); color: #fff; }
+  .s9::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 45% at 50% 30%, rgba(250,183,2,0.10) 0%, rgba(250,183,2,0) 70%),
+      radial-gradient(60% 50% at 50% 100%, rgba(232,153,122,0.12) 0%, rgba(232,153,122,0) 70%);
+  }
+  .s9 .content { justify-content: space-between; }
+  .s9 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s9 .top .logo { font: 300 36px/1 "Fraunces", serif; font-style: italic; color: #fff; }
+  .s9 .top .page { font: 500 20px/1 "Inter", sans-serif; letter-spacing: 0.3em; opacity: 0.6; }
+
+  .s9 .cta {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+  }
+  .s9 .cta .kicker {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--apricot);
+    margin-bottom: 32px;
+  }
+  .s9 .cta h3 {
+    font: 300 116px/1.02 "Fraunces", Georgia, serif;
+    letter-spacing: -0.012em;
+  }
+  .s9 .cta h3 .ne { font-style: normal; color: #fff; }
+  .s9 .cta h3 em { font-style: italic; color: var(--gold); }
+  .s9 .cta .sub {
+    margin-top: 30px;
+    font: 400 28px/1.45 "Inter", sans-serif;
+    color: rgba(255,255,255,0.82);
+    max-width: 740px;
+  }
+  .s9 .cta .sub em { font-style: italic; color: var(--apricot); }
+  .s9 .btn {
+    display: inline-flex; align-items: center; gap: 14px;
+    margin-top: 46px;
+    padding: 30px 52px;
+    background: var(--gold); color: #111;
+    border-radius: 999px;
+    font: 600 24px/1 "Inter", sans-serif;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 22px 44px -12px rgba(250,183,2,0.4);
+  }
+  .s9 .btn svg { width: 28px; height: 28px; }
+  .s9 .match {
+    margin-top: 28px;
+    font: 400 22px/1.4 "Inter", sans-serif;
+    color: rgba(255,255,255,0.78);
+    font-style: italic;
+  }
+  .s9 .match strong { color: var(--gold); font-weight: 500; font-style: normal; }
+
+  .s9 .footer {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .s9 .footer .line-caps {
+    font: 500 18px/1 "Inter", sans-serif;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--apricot);
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.22);
+    opacity: 0.9;
+  }
+  .s9 .footer .contact { display: flex; gap: 52px; }
+  .s9 .footer .contact span strong {
+    font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 16px; opacity: 0.72; color: #fff;
+    display: block; margin-bottom: 8px;
+  }
+  .s9 .footer .contact span {
+    font: 400 22px/1 "Inter", sans-serif;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ————————————————————————————————————————————————
+       SLIDE 1 · HOOK · mock search-result page
+       Three margin annotations (hook allows 3)
+       ———————————————————————————————————————————————— -->
+  <article class="slide s1">
+    <div class="content">
+      <div class="top">
+        <div class="logo">Villas Sabai Jai</div>
+        <div class="kicker">WHAT THE OTA DIDN'T SHOW YOU</div>
+      </div>
+
+      <h1 class="hero">The cheaper <em>price</em><br>isn't the cheaper <em>stay.</em></h1>
+
+      <div class="listing-wrap">
+        <div class="listing">
+          <div class="hdr">
+            <div class="brand">TravelCo<span class="dot">.</span></div>
+            <div class="hdr-meta">SEARCH · KOH TAO · 14 NOV</div>
+          </div>
+          <div class="photo">
+            <div class="photo-badge">−20% OFF</div>
+            <div class="photo-heart">♡</div>
+            <div class="photo-count">1 / 24</div>
+          </div>
+          <div class="body">
+            <div class="row1">
+              <div class="name-col">
+                <div class="name">Orchid Bay Retreat</div>
+                <div class="type">Villa · Entire place</div>
+              </div>
+              <div class="score-col">
+                <div class="stars">★★★★<span class="half">★</span></div>
+                <div class="starline">4.3 · 1,247 reviews</div>
+              </div>
+            </div>
+            <div class="loc">
+              <svg class="pin" viewBox="0 0 14 18" fill="currentColor"><path d="M7 0C3.1 0 0 3 0 6.7 0 11.8 7 18 7 18s7-6.2 7-11.3C14 3 10.9 0 7 0zm0 9.2a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+              <span>Mae Haad · 200m from beach · 1.2km from ferry</span>
+            </div>
+
+            <div class="hr"></div>
+
+            <div class="row2">
+              <div class="score-box">
+                <div class="sc-num">8.4</div>
+                <div class="sc-txt">
+                  <div class="sc-label">Excellent</div>
+                  <div class="sc-sub">1,247 reviews</div>
+                </div>
+              </div>
+              <div class="policies">
+                <div class="chk">Free cancellation</div>
+                <div class="chk">No prepayment needed</div>
+                <div class="chk">Breakfast included</div>
+              </div>
+            </div>
+
+            <div class="scarcity">Only 1 room left at this price!</div>
+          </div>
+
+          <div class="priceRow">
+            <div class="price-wrap">
+              <div class="price-line">
+                <span class="was">£—</span>
+                <span class="now">£—</span>
+              </div>
+              <span class="incl">/night · Includes taxes &amp; fees</span>
+            </div>
+            <div class="btn">See availability</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANNOTATION 1 · left margin → strikethrough price -->
+      <div class="annot annot-1">
+        <svg viewBox="0 0 210 60" fill="none" stroke="#E53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 10 C 45 18, 90 34, 185 50"/>
+          <path d="M175 42 L 188 52 L 178 58"/>
+        </svg>
+        <div class="tx">fake discount</div>
+      </div>
+
+      <!-- ANNOTATION 2 · right margin → scarcity / fake urgency -->
+      <div class="annot annot-2">
+        <svg viewBox="0 0 200 60" fill="none" stroke="#E53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M195 12 C 155 22, 90 38, 8 52"/>
+          <path d="M18 42 L 5 52 L 16 60"/>
+        </svg>
+        <div class="tx">fake urgency</div>
+      </div>
+
+      <div class="swipe-row">
+        <span>01 / 09 · KOH TAO</span>
+        <span class="swipe">SWIPE
+          <svg viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 5 H20 M16 1 L20 5 L16 9"/></svg>
+        </span>
+      </div>
+    </div>
+  </article>
+
+  <!-- ————————————————————————————————————————————————
+       SLIDE 2 · SHOCK · dark, one red strikethrough
+       V2 visual homage — only £180 gets struck
+       ———————————————————————————————————————————————— -->
+  <article class="slide s2">
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">02 · The Shock</div>
+        <div class="num">ii</div>
+      </div>
+      <div class="core">
+        <div class="kicker">— WHAT THE OTA LIKES YOU TO SEE</div>
+        <h2>A £10 cheaper room.<br>A <span class="strike">£180</span> worse trip.</h2>
+        <p class="sub">The OTA shows the <em>headline.</em><br>Your stay pays the <em>footnote.</em></p>
+      </div>
+      <div class="tail">
+        <span>02 / 09</span>
+        <span>What the OTA left out →</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- ————————————————————————————————————————————————
+       SLIDE 3 · THE TRAP · split receipts
+       2 annotations: gap arrow, right-side bracket
+       ———————————————————————————————————————————————— -->
+  <article class="slide s3">
+    <div class="content">
+      <div class="top">
+        <div class="kicker">— SAME VILLA · TWO RECEIPTS</div>
+        <div class="num">iii</div>
+      </div>
+      <h3>One booked through the OTA.<br><em>One booked direct.</em></h3>
+
+      <div class="compare">
+        <!-- ANNOTATION · between-cards arrow (top gap) -->
+        <div class="annot annot-gap">
+          <svg viewBox="0 0 300 50" fill="none" stroke="#E53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M30 25 L 270 25"/>
+            <path d="M40 15 L 28 25 L 40 35"/>
+            <path d="M260 15 L 272 25 L 260 35"/>
+          </svg>
+          <div class="tx">same villa. same dates.</div>
+        </div>
+
+        <!-- LEFT · TravelCo (generic) -->
+        <div class="rcp bad">
+          <div class="brand">TravelCo<span class="dot">.</span>
+            <small>Booking Confirmation</small>
+          </div>
+          <div class="title">OTA Confirmation</div>
+          <div class="ln"><span class="k">Villa</span><span class="v">Beachfront Pool Villa</span></div>
+          <div class="ln"><span class="k">Dates</span><span class="v">14 Nov — 21 Nov</span></div>
+          <div class="ln"><span class="k">Guests</span><span class="v">4 adults</span></div>
+          <div class="ln"><span class="k">Bedrooms</span><span class="v">2 of 3</span></div>
+          <div class="ln"><span class="k">Pier transfer · Mae Haad</span><span class="v empty">— — —</span></div>
+          <div class="ln"><span class="k">Masks &amp; snorkels</span><span class="v empty">— — —</span></div>
+          <div class="ln"><span class="k">Baby cot / high chair</span><span class="v empty">— — —</span></div>
+          <div class="ln"><span class="k">In-house 10% off</span><span class="v empty">— — —</span></div>
+          <div class="ln"><span class="k">Pay-direct 5% saving</span><span class="v empty">— — —</span></div>
+          <div class="tot"><span class="k">Perks</span><span class="v">0</span></div>
+        </div>
+
+        <!-- RIGHT · Villas Sabai Jai -->
+        <div class="rcp good">
+          <div class="brand">Villas Sabai Jai
+            <small>Direct Confirmation</small>
+          </div>
+          <div class="title">Your Stay</div>
+          <div class="ln"><span class="k">Villa</span><span class="v">Beachfront Pool Villa</span></div>
+          <div class="ln"><span class="k">Dates</span><span class="v">14 Nov — 21 Nov</span></div>
+          <div class="ln"><span class="k">Guests</span><span class="v">4 adults</span></div>
+          <div class="ln perk"><span class="k">Bedrooms</span><span class="v">3 of 3 · upgrade free</span></div>
+          <div class="ln perk"><span class="k">Pier transfer · Mae Haad</span><span class="v">both ways</span></div>
+          <div class="ln perk"><span class="k">Masks &amp; snorkels</span><span class="v">one per guest</span></div>
+          <div class="ln perk"><span class="k">Baby cot / high chair</span><span class="v">free</span></div>
+          <div class="ln perk"><span class="k">In-house 10% off</span><span class="v">dive · spa · snorkel</span></div>
+          <div class="ln perk"><span class="k">Pay-direct 5% saving</span><span class="v">bank transfer</span></div>
+          <div class="tot"><span class="k">Perks</span><span class="v">6+</span></div>
+        </div>
+
+        <!-- ANNOTATION · right-margin bracket around perks -->
+        <div class="annot annot-bracket">
+          <svg viewBox="0 0 40 220" fill="none" stroke="#E53935" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M30 6 L 10 6 L 10 214 L 30 214"/>
+          </svg>
+          <div class="tx">[ these only<br>exist here ]</div>
+        </div>
+      </div>
+
+      <p class="caption">Two checkouts. Six missing lines. One honest bill.</p>
+    </div>
+  </article>
+
+  <!-- ————————————————————————————————————————————————
+       SLIDE 4 · PERK 1 · Sabai Massage invoice
+       1 annotation: left-margin arrow → discount line
+       ———————————————————————————————————————————————— -->
+  <article class="slide s4">
+    <div class="content">
+      <div class="top">
+        <div class="eyebrow">03 · Perk 01 — In-House Discount</div>
+        <div class="num">iv</div>
+      </div>
+      <div class="hd">
+        <div class="kicker">— A LINE THAT DOESN'T EXIST ON PLATFORMS</div>
+        <h3>A printed receipt<br>with <em>an extra line.</em></h3>
+      </div>
+
+      <div class="invoice-wrap">
+        <div class="invoice">
+          <div class="hd-row">
+            <div class="brand">Sabai Massage
+              <small>Treatment Receipt</small>
+            </div>
+            <div class="rno">Receipt<strong>#SM-4412</strong></div>
+          </div>
+          <div class="title">Treatment</div>
+          <div class="ln"><span class="k">Thai Oil Massage · 90 min</span><span class="v">—</span></div>
+          <div class="ln"><span class="k">Time · In-villa</span><span class="v">16:30</span></div>
+          <div class="ln disc"><span class="k">DIRECT BOOKER — 10% OFF</span><span class="v">−10%</span></div>
+          <div class="tot"><span class="k">Paid</span><span class="v">—</span></div>
+          <div class="foot">
+            <span>No voucher · no code</span>
+            <span>Just mention direct</span>
+          </div>
+        </div>
+
+        <!-- ANNOTATION · left margin → discount line -->
+        <div class="annot annot-arrow">
+          <div class="tx">this line<br><span>doesn't exist on<br>the platform</span></div>
+          <svg viewBox="0 0 180 60" fill="none" stroke="#E53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 10 C 50 18, 95 36, 170 44"/>
+            <path d="M156 36 L 172 46 L 160 56"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="anchor">Direct bookers receive 10% off all in-house services — diving, snorkelling and spa.</p>
+    </div>
+  </article>
+
+  <!-- ————————————————————————————————————————————————
+       SLIDE 5 · PERK 2 · bank transfer confirmation
+       1 annotation: right-margin arrow → total
+       ———————————————————————————————————————————————— -->
+  <article class="slide s5">
+    <div class="content">
+      <div class="top">
+        <div class="eyebrow">04 · Perk 02 — Pay Direct</div>
+        <div class="num">v</div>
+      </div>
+      <div class="hd">
+        <div class="kicker">— A TRANSFER THAT PAYS YOU BACK</div>
+        <h3>No card fee.<br>No platform fee. <em>−5%.</em></h3>
+      </div>
+
+      <div class="tr-wrap">
+        <div class="transfer">
+          <div class="hdr">
+            <div class="brand">Villas Sabai Jai
+              <small>Bank Transfer · Confirmation</small>
+            </div>
+            <div class="bdg">Ref<strong>#VSJ-TRF-0247</strong></div>
+          </div>
+          <div class="ttl">Payment</div>
+          <div class="ln"><span class="k">Method</span><span class="v">International bank transfer</span></div>
+          <div class="ln"><span class="k">Currencies accepted</span><span class="v">THB · USD · EUR</span></div>
+          <div class="ln"><span class="k">Booking subtotal</span><span class="v">— — —</span></div>
+          <div class="ln pos"><span class="k">Pay-direct saving</span><span class="v">−5%</span></div>
+          <div class="ln"><span class="k">Card processing fee</span><span class="v">0.00</span></div>
+          <div class="ln"><span class="k">Platform commission</span><span class="v">0.00</span></div>
+          <div class="tot"><span class="k">Net to villa owner</span><span class="v">100% · no middleman</span></div>
+          <div class="foot">Payment within 3 working days of confirmation · details sent on booking.</div>
+        </div>
+
+        <!-- ANNOTATION · right margin → total -->
+        <div class="annot annot-right">
+          <div class="tx">−5% · no card fees<br><span>· no platform fees</span></div>
+          <svg viewBox="0 0 190 60" fill="none" stroke="#E53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M185 12 C 140 22, 85 38, 10 46"/>
+            <path d="M24 36 L 6 48 L 22 58"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="anchor">Pay by international bank transfer — THB, USD or EUR — within 3 working days.</p>
+    </div>
+  </article>
+
+  <!-- ————————————————————————————————————————————————
+       SLIDE 6 · ARRIVAL CHECKLIST · red ticks only
+       No margin annotations. Red ticks + one Caveat line.
+       ———————————————————————————————————————————————— -->
+  <article class="slide s6">
+    <div class="content">
+      <div class="top">
+        <div class="eyebrow">05 · Arrival · Perks 03–06</div>
+        <div class="num">vi</div>
+      </div>
+      <div class="hd">
+        <div class="kicker">— THE ARRIVAL CARD YOU DON'T GET</div>
+        <h3>Four things <em>already done</em><br>before you dock.</h3>
+      </div>
+
+      <div class="card-wrap">
+        <div class="card">
+          <div class="tt">Direct Booker · Arrival Checklist</div>
+          <div class="row">
+            <div class="tick">✓</div>
+            <div class="txt"><strong>Pier pickup</strong> <em>— waiting at Mae Haad</em></div>
+          </div>
+          <div class="row">
+            <div class="tick">✓</div>
+            <div class="txt"><strong>Masks &amp; snorkels</strong> <em>— on deck, one per guest</em></div>
+          </div>
+          <div class="row">
+            <div class="tick">✓</div>
+            <div class="txt"><strong>Baby cot / high chair</strong> <em>— already set up</em></div>
+          </div>
+          <div class="row">
+            <div class="tick">✓</div>
+            <div class="txt"><strong>Early check-in 1pm</strong> <em>— guaranteed</em></div>
+          </div>
+          <div class="stamp">
+            <span class="caveat">0 extra charges.  0 add-to-booking.</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="anchor">Every item confirmed 24 hours before arrival where applicable.</p>
+    </div>
+  </article>
+
+  <!-- ————————————————————————————————————————————————
+       SLIDE 7 · ROOMS DROPDOWN
+       1 margin annotation → locked (3rd) room
+       ———————————————————————————————————————————————— -->
+  <article class="slide s7">
+    <div class="content">
+      <div class="top">
+        <div class="eyebrow">06 · Perk 07 — The Extra Bedroom</div>
+        <div class="num">vii</div>
+      </div>
+      <div class="hd">
+        <div class="kicker">— THE ROOM YOU DIDN'T KNOW WAS YOURS</div>
+        <h3>Platforms show two rooms.<br><em>Direct unlocks the third.</em></h3>
+      </div>
+
+      <div class="selector-wrap">
+        <div class="selector">
+          <div class="label">— Available rooms · Your villa · 14 Nov</div>
+          <div class="room">
+            <div class="info">
+              <h5>Garden Bedroom · Queen</h5>
+              <p>Included in your booking · sleeps 2</p>
+            </div>
+            <div class="price">Included<span class="sm">in rate</span></div>
+          </div>
+          <div class="room selected">
+            <div class="info">
+              <h5>Pool Bedroom · King</h5>
+              <p>Included in your booking · sleeps 2</p>
+            </div>
+            <div class="price">Selected<span class="sm">in rate</span></div>
+          </div>
+          <div class="room locked">
+            <div class="info">
+              <h5>Upper Bedroom · Twin</h5>
+              <p>Unavailable via platform · sleeps 2</p>
+            </div>
+            <div class="price"><span class="lock">—</span>Locked<span class="sm">via platform</span></div>
+          </div>
+        </div>
+
+        <!-- ANNOTATION · right margin → locked room -->
+        <div class="annot annot-up">
+          <div class="tx">direct unlocks<br><span>this one too</span></div>
+          <svg viewBox="0 0 120 90" fill="none" stroke="#E53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M100 85 C 90 50, 55 30, 10 12"/>
+            <path d="M10 26 L 6 10 L 22 14"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="proseline">Plus: if a <em>better villa</em> is free, we upgrade you.</p>
+    </div>
+  </article>
+
+  <!-- ————————————————————————————————————————————————
+       SLIDE 8 · HANDWRITTEN LEDGER · pen IS the content
+       No margin scribbles. Black marker + red subtotals/closer.
+       ———————————————————————————————————————————————— -->
+  <article class="slide s8">
+    <div class="content">
+      <div class="top">
+        <div class="eyebrow">07 · The Running Ledger</div>
+        <div class="num">viii</div>
+      </div>
+      <div class="hd">
+        <div class="kicker">— ADD THE UNSHOWN LINES BACK IN</div>
+        <h3>The perks, <em>line by line.</em></h3>
+      </div>
+
+      <div class="pad-wrap">
+        <div class="pad">
+          <div class="tx">+ 10% off dives</div>
+          <div class="tx">+ 10% off spa</div>
+          <div class="tx">+ 5% pay direct</div>
+          <div class="tx">+ pier transfer</div>
+          <div class="tx">+ masks</div>
+          <div class="tx">+ baby cot</div>
+          <div class="tx">+ early check-in</div>
+          <div class="tx">+ late check-out</div>
+          <div class="tx">+ upgrade possible</div>
+          <div class="tx">+ extra bedroom</div>
+          <div class="rule">─ ─ ─ ─ ─</div>
+          <div class="closer">more than just the headline rate.</div>
+        </div>
+      </div>
+
+      <p class="anchor">Ten lines. Zero on a third-party platform.</p>
+    </div>
+  </article>
+
+  <!-- ————————————————————————————————————————————————
+       SLIDE 9 · CTA · dark, clean, ZERO red
+       ———————————————————————————————————————————————— -->
+  <article class="slide s9">
+    <div class="content">
+      <div class="top">
+        <div class="logo">Villas Sabai Jai</div>
+        <div class="page">09 / 09</div>
+      </div>
+
+      <div class="cta">
+        <div class="kicker">— NEXT TIME YOU'RE ABOUT TO BOOK</div>
+        <h3><span class="ne">Always ask:</span><br>can I just <em>book direct?</em></h3>
+        <p class="sub">We reply in <em>hours, not days.</em> The owner personally answers most messages — no call centre, no chatbot.</p>
+        <a class="btn" href="https://wa.me/66925947517">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7 0 1.6 1.2 3.1 1.3 3.3.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.8.7.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.4 5 5-1.4A10 10 0 1012 2z"/></svg>
+          WhatsApp +66 92 594 7517
+        </a>
+        <p class="match">Find a legit lower quote elsewhere? <strong>We'll match it.</strong></p>
+      </div>
+
+      <div class="footer">
+        <div class="line-caps">— BOOK DIRECT · UNLOCK THE PERKS</div>
+        <div class="contact">
+          <span><strong>Instagram</strong>instagram.com/villasabaijai</span>
+          <span><strong>WhatsApp</strong>+66 92 594 7517</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</body>
+</html>
