@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Villas Sabai Jai — Don't Book Us If… (Print)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+
+  :root {
+    --cream:      #F4EDE1;
+    --cream-soft: #FAF6EC;
+    --ink:        #0F3D3E;
+    --ink-soft:   #1f4f50;
+    --ink-deep:   #0a2a2b;
+    --plum:       #3D3548;
+    --peach:      #E8997A;
+    --apricot:    #E8C296;
+    --gold:       #FAB702;
+    --line:       rgba(15,61,62,0.18);
+    --line-light: rgba(255,255,255,0.22);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: #fff; }
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; }
+
+  .slide {
+    width: 1080px; height: 1350px;
+    page-break-after: always; break-after: page;
+    position: relative; isolation: isolate; overflow: hidden;
+    background: var(--cream); color: var(--ink);
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+
+  .bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+  .scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .content {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; flex-direction: column;
+    padding: 80px 85px;
+  }
+
+  .eyebrow { font: 500 25px/1 "Inter", sans-serif; letter-spacing: 0.32em; text-transform: uppercase; }
+  .pager { display: flex; justify-content: space-between; align-items: baseline; }
+  .pager .num { font: 300 35px/1 "Fraunces", serif; font-style: italic; opacity: 0.5; }
+
+  /* ——— Shared: objection (dark) vs flip (cream) shells ——— */
+  .objection { background: var(--ink-deep); color: #fff; }
+  .objection::before {
+    content:""; position:absolute; inset:0; z-index: 0;
+    background: radial-gradient(55% 55% at 50% 40%, rgba(232,194,150,0.10), transparent 70%);
+  }
+  .objection .bg { z-index: -1; opacity: 0.28; }
+  .objection .scrim {
+    background:
+      linear-gradient(180deg, rgba(10,42,43,0.55) 0%, rgba(10,42,43,0.15) 35%, rgba(10,42,43,0.85) 100%);
+  }
+  .objection .pager .eyebrow { color: var(--apricot); opacity: 0.95; }
+  .objection .pager .num { color: rgba(255,255,255,0.5); }
+
+  .flip { background: var(--cream); color: var(--ink); }
+  .flip .scrim {
+    background:
+      linear-gradient(180deg, rgba(244,237,225,0.82) 0%, rgba(244,237,225,0.92) 50%, rgba(244,237,225,1) 100%);
+  }
+  .flip .pager .eyebrow { color: var(--peach); opacity: 0.95; }
+  .flip .pager .num { color: rgba(15,61,62,0.45); }
+
+  /* ———————————————— SLIDE 1 — HOOK ———————————————— */
+  .s1 {
+    background:
+      radial-gradient(80% 60% at 50% 20%, rgba(232,194,150,0.45) 0%, rgba(232,194,150,0) 70%),
+      radial-gradient(70% 60% at 10% 100%, rgba(232,153,122,0.28) 0%, rgba(232,153,122,0) 65%),
+      var(--cream);
+    color: var(--ink);
+  }
+  .s1 .content { justify-content: space-between; padding: 90px 85px; }
+  .s1 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s1 .logo { font: 300 38px/1 "Fraunces", serif; font-style: italic; }
+  .s1 .tag {
+    font-size: 22px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+  }
+  .s1 .hook { display: flex; flex-direction: column; gap: 30px; }
+  .s1 .hook .kicker {
+    font-size: 24px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach); opacity: 0.95;
+  }
+  .s1 .hook h2 {
+    font: 300 124px/1.02 "Fraunces", Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+  .s1 .hook h2 em { font-style: italic; }
+  .s1 .hook h2 .dots { color: var(--peach); font-style: italic; }
+  .s1 .hook .sub {
+    font: 300 38px/1.4 "Fraunces", Georgia, serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    max-width: 820px;
+  }
+  .s1 .hook .sub span { color: var(--peach); }
+  .s1 .swipe {
+    display: flex; align-items: center; gap: 20px;
+    font-size: 24px; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--ink); opacity: 0.75;
+  }
+  .s1 .swipe svg { width: 55px; height: 22px; }
+  .s1 .rule { width: 110px; height: 2px; background: var(--peach); opacity: 0.85; }
+
+  /* ———————————————— SLIDE 2 — OBJECTION 1 ———————————————— */
+  .s2 .bg { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/Spacious-Villas-on-Koh-Tao.jpg'); background-position: center 45%; }
+  .s2 .content { justify-content: space-between; }
+  .s2 .kicker-row {
+    display: flex; align-items: center; gap: 22px;
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--apricot); opacity: 0.95;
+  }
+  .s2 .kicker-row .mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: rgba(232,194,150,0.15);
+    border: 1px solid rgba(232,194,150,0.4);
+    font: 400 28px/1 "Fraunces", serif; font-style: italic;
+    color: var(--apricot);
+  }
+  .s2 .core { display: flex; flex-direction: column; gap: 40px; margin-top: 20px; }
+  .s2 h2 {
+    font: 300 96px/1.05 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s2 h2 em { font-style: italic; color: var(--apricot); }
+  .s2 h2 .dots { color: var(--apricot); font-style: italic; }
+  .s2 .body {
+    font: 400 32px/1.55 "Inter", sans-serif;
+    color: rgba(255,255,255,0.82);
+    max-width: 830px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line-light);
+  }
+  .s2 .body strong { font-weight: 500; color: #fff; }
+
+  /* ———————————————— SLIDE 3 — FLIP 1 ———————————————— */
+  .s3 .bg { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/Boutique-Pool-Villas.jpg'); background-position: center 40%; }
+  .s3 .content { justify-content: space-between; }
+  .s3 .flip-tag {
+    display: inline-flex; align-items: center; gap: 18px;
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--peach);
+  }
+  .s3 .flip-tag .dot {
+    width: 10px; height: 10px; border-radius: 50%; background: var(--peach);
+  }
+  .s3 .core { display: flex; flex-direction: column; gap: 38px; margin-top: 20px; }
+  .s3 h2 {
+    font: 300 88px/1.06 "Fraunces", Georgia, serif;
+    letter-spacing: -0.005em;
+  }
+  .s3 h2 em { font-style: italic; color: var(--peach); }
+  .s3 .body {
+    font: 400 30px/1.55 "Inter", sans-serif;
+    color: rgba(15,61,62,0.75);
+    max-width: 830px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+  }
+  .s3 .body strong { font-weight: 500; color: var(--ink); }
+
+  /* ———————————————— SLIDE 4 — OBJECTION 2 ———————————————— */
+  .s4 .bg { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/10/eagle-villa-04.jpg'); }
+  .s4 .content { justify-content: space-between; }
+  .s4 .kicker-row {
+    display: flex; align-items: center; gap: 22px;
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--apricot); opacity: 0.95;
+  }
+  .s4 .kicker-row .mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: rgba(232,194,150,0.15);
+    border: 1px solid rgba(232,194,150,0.4);
+    font: 400 28px/1 "Fraunces", serif; font-style: italic;
+    color: var(--apricot);
+  }
+  .s4 .core { display: flex; flex-direction: column; gap: 40px; margin-top: 20px; }
+  .s4 h2 {
+    font: 300 94px/1.05 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s4 h2 em { font-style: italic; color: var(--apricot); }
+  .s4 .body {
+    font: 400 32px/1.55 "Inter", sans-serif;
+    color: rgba(255,255,255,0.82);
+    max-width: 830px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line-light);
+  }
+  .s4 .body strong { font-weight: 500; color: #fff; }
+  .s4 .count {
+    display: inline-flex; align-items: baseline; gap: 18px;
+    padding: 14px 22px;
+    background: rgba(232,194,150,0.1);
+    border: 1px solid rgba(232,194,150,0.35);
+    border-radius: 999px;
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--apricot);
+    align-self: flex-start;
+  }
+  .s4 .count .big { font: 300 30px/1 "Fraunces", serif; font-style: italic; color: #fff; }
+
+  /* ———————————————— SLIDE 5 — FLIP 2 ———————————————— */
+  .s5 .bg { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/10/eagle-villa-10.jpg'); }
+  .s5 .content { justify-content: space-between; }
+  .s5 .flip-tag {
+    display: inline-flex; align-items: center; gap: 18px;
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--peach);
+  }
+  .s5 .flip-tag .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--peach); }
+  .s5 .core { display: flex; flex-direction: column; gap: 38px; margin-top: 20px; }
+  .s5 h2 {
+    font: 300 82px/1.08 "Fraunces", Georgia, serif;
+    letter-spacing: -0.005em;
+  }
+  .s5 h2 em { font-style: italic; color: var(--peach); }
+  .s5 .list { display: flex; flex-direction: column; gap: 18px; padding-top: 30px; border-top: 1px solid var(--line); }
+  .s5 .list .row {
+    display: flex; align-items: baseline; gap: 20px;
+    font: 400 30px/1.5 "Inter", sans-serif;
+    color: rgba(15,61,62,0.78);
+  }
+  .s5 .list .row .mk {
+    font: 400 26px/1 "Fraunces", serif; font-style: italic;
+    color: var(--peach); min-width: 30px;
+  }
+  .s5 .list .row strong { font-weight: 500; color: var(--ink); }
+
+  /* ———————————————— SLIDE 6 — OBJECTION 3 ———————————————— */
+  .s6 .bg { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/turtle-villa-08.jpg'); }
+  .s6 .content { justify-content: space-between; }
+  .s6 .kicker-row {
+    display: flex; align-items: center; gap: 22px;
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--apricot); opacity: 0.95;
+  }
+  .s6 .kicker-row .mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 58px; height: 58px; border-radius: 50%;
+    background: rgba(232,194,150,0.15);
+    border: 1px solid rgba(232,194,150,0.4);
+    font: 400 28px/1 "Fraunces", serif; font-style: italic;
+    color: var(--apricot);
+  }
+  .s6 .core { display: flex; flex-direction: column; gap: 40px; margin-top: 20px; }
+  .s6 h2 {
+    font: 300 94px/1.05 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s6 h2 em { font-style: italic; color: var(--apricot); }
+  .s6 .body {
+    font: 400 32px/1.55 "Inter", sans-serif;
+    color: rgba(255,255,255,0.82);
+    max-width: 830px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line-light);
+  }
+  .s6 .body strong { font-weight: 500; color: #fff; }
+
+  /* ———————————————— SLIDE 7 — FLIP 3 ———————————————— */
+  .s7 .bg { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/Gecco-Villa-Header.jpg'); }
+  .s7 .content { justify-content: space-between; }
+  .s7 .flip-tag {
+    display: inline-flex; align-items: center; gap: 18px;
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--peach);
+  }
+  .s7 .flip-tag .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--peach); }
+  .s7 .core { display: flex; flex-direction: column; gap: 38px; margin-top: 20px; }
+  .s7 h2 {
+    font: 300 86px/1.06 "Fraunces", Georgia, serif;
+    letter-spacing: -0.005em;
+  }
+  .s7 h2 em { font-style: italic; color: var(--peach); }
+  .s7 .body {
+    font: 400 30px/1.55 "Inter", sans-serif;
+    color: rgba(15,61,62,0.75);
+    max-width: 830px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+  }
+  .s7 .body strong { font-weight: 500; color: var(--ink); }
+  .s7 .body em { font-style: italic; color: var(--peach); }
+
+  /* ———————————————— SLIDE 8 — CTA ———————————————— */
+  .s8 .bg { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/Turtle-Villa-Header.jpg'); }
+  .s8 .scrim {
+    background:
+      linear-gradient(180deg, rgba(232,194,150,0.18) 0%, rgba(232,153,122,0.15) 20%, rgba(61,53,72,0.55) 55%, rgba(15,61,62,0.96) 100%);
+  }
+  .s8 .content { color: #fff; justify-content: space-between; }
+  .s8 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s8 .top .logo { font: 300 38px/1 "Fraunces", serif; font-style: italic; }
+  .s8 .top .page { font-size: 22px; letter-spacing: 0.32em; opacity: 0.8; }
+  .s8 .cta { text-align: center; }
+  .s8 .cta .eyebrow {
+    font-size: 25px; letter-spacing: 0.32em; opacity: 0.85;
+    color: var(--apricot);
+    margin-bottom: 35px;
+  }
+  .s8 .cta h3 {
+    font: 300 118px/1.02 "Fraunces", Georgia, serif;
+    font-style: italic;
+    letter-spacing: -0.01em;
+  }
+  .s8 .cta h3 .big {
+    display: block; font-style: normal;
+    font-size: 78px; letter-spacing: 0.005em;
+    margin-top: 18px;
+  }
+  .s8 .cta .sub {
+    margin-top: 28px;
+    font: 400 28px/1.4 "Inter", sans-serif;
+    color: rgba(255,255,255,0.82);
+    max-width: 680px;
+    margin-left: auto; margin-right: auto;
+  }
+  .s8 .cta .sub em { font-style: italic; color: var(--apricot); }
+  .s8 .btn {
+    display: inline-block; margin-top: 45px;
+    padding: 32px 58px;
+    background: var(--gold); color: #111;
+    border-radius: 999px;
+    font: 600 26px/1 "Inter", sans-serif;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 20px 40px -15px rgba(250,183,2,0.5);
+  }
+  .s8 .footer {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    font: 400 26px/1.4 "Inter", sans-serif;
+    opacity: 0.92;
+  }
+  .s8 .contact { display: flex; gap: 45px; }
+  .s8 .contact span strong {
+    font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+    font-size: 20px; opacity: 0.7;
+    display: block; margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- SLIDE 1 — HOOK -->
+  <article class="slide s1">
+    <div class="content">
+      <div class="top">
+        <div class="logo">Villas Sabai Jai</div>
+        <div class="tag">— AN HONEST CAROUSEL</div>
+      </div>
+      <div class="hook">
+        <div class="kicker">— READ THIS FIRST</div>
+        <h2>Don't book <em>Villa&nbsp;Sabai&nbsp;Jai</em> if<span class="dots">…</span></h2>
+        <span class="rule"></span>
+        <p class="sub">Four reasons this isn't for you. <span>(And why most guests love exactly that.)</span></p>
+      </div>
+      <div class="swipe">
+        <span>SWIPE</span>
+        <svg viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M0 5 H20 M16 1 L20 5 L16 9"/>
+        </svg>
+      </div>
+    </div>
+  </article>
+
+  <!-- SLIDE 2 — OBJECTION 1 (dark) -->
+  <article class="slide objection s2">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">02a · Objection No. 1</div>
+        <div class="num">ii</div>
+      </div>
+      <div class="core">
+        <div class="kicker-row">
+          <span class="mark">!</span>
+          <span>Don't book us if<span style="color:var(--apricot);">…</span></span>
+        </div>
+        <h2>…you want <em>a beach</em> at your doorstep.</h2>
+        <p class="body">Villas Sabai Jai sits on a <strong>private cape</strong> — 50 metres of cliff between you and the sea. Two beaches bracket the headland, but there's no sand under your sandals when you wake up. That was the point.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- SLIDE 3 — FLIP 1 (cream) -->
+  <article class="slide flip s3">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">02b · The Flip</div>
+        <div class="num">iii</div>
+      </div>
+      <div class="core">
+        <div class="flip-tag"><span class="dot"></span><span>But here's the thing —</span></div>
+        <h2>The beach is <em>twelve minutes</em> away.<br>The privacy is <em>forever.</em></h2>
+        <p class="body">Shark Bay Beach and Sai Daeng sit at each end of the cape — a short walk down, a songthaew back if your legs are tired. <strong>When the sunset crowd trudges back uphill past beachfront resorts, you don't.</strong> You're already home, feet in your own pool, watching the same sky.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- SLIDE 4 — OBJECTION 2 (dark) -->
+  <article class="slide objection s4">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">03a · Objection No. 2</div>
+        <div class="num">iv</div>
+      </div>
+      <div class="core">
+        <div class="kicker-row">
+          <span class="mark">!</span>
+          <span>Don't book us if<span style="color:var(--apricot);">…</span></span>
+        </div>
+        <h2>…you want <em>100 rooms</em> and a buffet.</h2>
+        <div class="count"><span class="big">3</span><span>villas. Total. On the whole cape.</span></div>
+        <p class="body">No lobby. No lanyards. No breakfast shift ending at 10:00 sharp. If you like the comfort of being one of 400 guests behind a key card, <strong>we're the wrong place.</strong></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- SLIDE 5 — FLIP 2 (cream/apricot) -->
+  <article class="slide flip s5">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">03b · The Flip</div>
+        <div class="num">v</div>
+      </div>
+      <div class="core">
+        <div class="flip-tag"><span class="dot"></span><span>But here's the thing —</span></div>
+        <h2>The chef knows your name <em>by day two.</em></h2>
+        <div class="list">
+          <div class="row"><span class="mk">—</span><span>Our private chef at Eagle Villa cooks what you actually want to eat — not a buffet line.</span></div>
+          <div class="row"><span class="mk">—</span><span>The in-villa spa team remembers which shoulder you said was knotted.</span></div>
+          <div class="row"><span class="mk">—</span><span><strong>Tom</strong> greets every arrival. Every single one, since 2007.</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- SLIDE 6 — OBJECTION 3 (dark) -->
+  <article class="slide objection s6">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">04a · Objection No. 3</div>
+        <div class="num">vi</div>
+      </div>
+      <div class="core">
+        <div class="kicker-row">
+          <span class="mark">!</span>
+          <span>Don't book us if<span style="color:var(--apricot);">…</span></span>
+        </div>
+        <h2>…you want <em>nightlife</em> out the front door.</h2>
+        <p class="body">Our cape sits on the quiet southern tip of Koh Tao. <strong>The bars, the music, the midnight beachfront bass</strong> — that's all on the other side of the island, in Sairee. On purpose.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- SLIDE 7 — FLIP 3 (cream/apricot) -->
+  <article class="slide flip s7">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">04b · The Flip</div>
+        <div class="num">vii</div>
+      </div>
+      <div class="core">
+        <div class="flip-tag"><span class="dot"></span><span>But here's the thing —</span></div>
+        <h2>You wanted <em>the view.</em><br>Not the bass.</h2>
+        <p class="body">From your private pool: <strong>180° over the Gulf of Thailand</strong>, sunrise over Sai Daeng on one side, sunset over Shark Bay on the other, cicadas after dark. <em>And if the Full Moon Party really calls your name — a 20-minute songthaew ride, and you're back before the coffee's cold.</em></p>
+      </div>
+    </div>
+  </article>
+
+  <!-- SLIDE 8 — CTA -->
+  <article class="slide s8">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">Villas Sabai Jai</div>
+        <div class="page">08 / 08</div>
+      </div>
+      <div class="cta">
+        <div class="eyebrow">— FOUR OBJECTIONS. FOUR FLIPS.</div>
+        <h3>
+          Still with us?
+          <span class="big">Book direct. Get the real perks.</span>
+        </h3>
+        <p class="sub">Or — <em>DM us a question first.</em> No pressure, no call centre, just Tom.</p>
+        <a class="btn" href="https://www.villasabaijai.com">villasabaijai.com</a>
+      </div>
+      <div class="footer">
+        <div class="contact">
+          <span><strong>WhatsApp</strong>+66 92 594 7517</span>
+          <span><strong>Instagram</strong>@villasabaijai</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</body>
+</html>
