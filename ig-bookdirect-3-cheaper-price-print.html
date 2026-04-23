@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Villas Sabai Jai — Book Direct Carousel 3 · The Cheaper Price Isn't The Cheaper Stay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+
+  :root {
+    --cream:      #F4EDE1;
+    --cream-soft: #FAF6EC;
+    --ink:        #0F3D3E;
+    --ink-soft:   #1f4f50;
+    --plum:       #3D3548;
+    --peach:      #E8997A;
+    --apricot:    #E8C296;
+    --gold:       #FAB702;
+    --gold-soft:  rgba(250,183,2,0.15);
+    --line:       rgba(15,61,62,0.18);
+    --grey-bar:   #C8BFAE;
+    --grey-bar-d: #A99F8C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: #fff; }
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; }
+
+  .slide {
+    width: 1080px; height: 1350px;
+    page-break-after: always; break-after: page;
+    position: relative; isolation: isolate; overflow: hidden;
+    background: var(--cream); color: var(--ink);
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+
+  .bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+  .scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .content {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; flex-direction: column;
+    padding: 80px 85px;
+  }
+
+  .eyebrow { font: 500 25px/1 "Inter", sans-serif; letter-spacing: 0.32em; text-transform: uppercase; }
+  .pager { display: flex; justify-content: space-between; align-items: baseline; }
+  .pager .num { font: 300 35px/1 "Fraunces", serif; font-style: italic; opacity: 0.5; }
+
+  /* ——————————— Slide 1 · HOOK — All Black ——————————— */
+  .s1 {
+    background: #0a0a0a;
+    color: #fff;
+  }
+  .s1::before {
+    content:""; position:absolute; inset:0;
+    background: radial-gradient(65% 55% at 50% 45%, rgba(250,183,2,0.08) 0%, rgba(250,183,2,0) 70%);
+  }
+  .s1 .content { justify-content: space-between; }
+  .s1 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s1 .logo { font: 300 34px/1 "Fraunces", serif; font-style: italic; opacity: 0.85; }
+  .s1 .kicker {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .s1 .core {
+    display: flex; flex-direction: column; justify-content: center;
+    flex: 1; text-align: center; padding: 0 20px;
+  }
+  .s1 .core h1 {
+    font: 300 108px/1.06 "Fraunces", Georgia, serif;
+    font-style: italic;
+    letter-spacing: -0.012em;
+    color: #fff;
+  }
+  .s1 .core h1 .ne { font-style: normal; }
+  .s1 .core h1 em { font-style: italic; color: var(--gold); }
+  .s1 .core .sub {
+    margin-top: 42px;
+    font: 400 28px/1.45 "Inter", sans-serif;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.01em;
+  }
+  .s1 .bottom { display: flex; justify-content: space-between; align-items: center; }
+  .s1 .swipe {
+    display: flex; align-items: center; gap: 16px;
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+  }
+  .s1 .swipe svg { width: 48px; height: 22px; }
+  .s1 .sig {
+    font: 500 18px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ——————————— Slide 2 · THE POLL ——————————— */
+  .s2 { background: var(--cream); }
+  .s2 .content { padding: 80px 85px 75px; justify-content: space-between; }
+  .s2 .pager .eyebrow { opacity: 0.55; }
+  .s2 .head { display: flex; flex-direction: column; gap: 28px; margin-top: 18px; }
+  .s2 .head .kicker {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+  }
+  .s2 .head h2 {
+    font: 300 86px/1.05 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s2 .head h2 em { font-style: italic; }
+  .s2 .poll-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 52px 55px 48px;
+    box-shadow:
+      0 30px 60px -24px rgba(15,61,62,0.22),
+      0 0 0 1px rgba(15,61,62,0.05);
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .s2 .poll-title {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(15,61,62,0.1);
+  }
+  .s2 .poll-title .label {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: rgba(15,61,62,0.55);
+  }
+  .s2 .poll-title .n {
+    font: 500 18px/1 "Inter", sans-serif;
+    letter-spacing: 0.12em;
+    color: rgba(15,61,62,0.45);
+  }
+  .s2 .row {
+    display: grid;
+    grid-template-columns: 200px 1fr 90px;
+    align-items: center;
+    gap: 22px;
+  }
+  .s2 .row .name {
+    font: 500 26px/1 "Inter", sans-serif;
+    color: var(--ink);
+  }
+  .s2 .row .track {
+    height: 42px;
+    background: rgba(15,61,62,0.06);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .s2 .row .bar {
+    position: absolute; top: 0; left: 0; bottom: 0;
+    background: var(--grey-bar);
+    border-radius: 8px;
+  }
+  .s2 .row.highlight .bar {
+    background: linear-gradient(90deg, var(--gold) 0%, #f0aa00 100%);
+    box-shadow: 0 0 0 2px rgba(250,183,2,0.3);
+  }
+  .s2 .row.highlight .name {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .s2 .row.highlight .name::before {
+    content: "★";
+    color: var(--gold);
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  .s2 .row .pct {
+    font: 500 26px/1 "JetBrains Mono", monospace;
+    text-align: right;
+    color: rgba(15,61,62,0.7);
+  }
+  .s2 .row.highlight .pct { color: var(--ink); font-weight: 600; }
+  .s2 .poll-caption {
+    font: 500 22px/1.3 "Inter", sans-serif;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--peach);
+    margin-top: 14px;
+    text-align: center;
+  }
+  .s2 .disclaimer {
+    font: 400 16px/1.4 "Inter", sans-serif;
+    color: rgba(15,61,62,0.45);
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  /* ——————————— Slide 3 · THE TRAP ——————————— */
+  .s3 { background: var(--cream); }
+  .s3 .content { justify-content: space-between; }
+  .s3 .pager .eyebrow { opacity: 0.55; }
+  .s3 .kicker {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+    margin-top: 18px;
+  }
+  .s3 h2 {
+    font: 300 112px/1.04 "Fraunces", Georgia, serif;
+    font-style: italic;
+    letter-spacing: -0.012em;
+    margin-top: 26px;
+  }
+  .s3 h2 .r { color: var(--peach); font-weight: 400; }
+  .s3 h2 .g { color: var(--ink); }
+  .s3 .sub {
+    font: 400 30px/1.5 "Inter", sans-serif;
+    color: rgba(15,61,62,0.72);
+    margin-top: 38px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    max-width: 820px;
+  }
+  .s3 .body {
+    font: 400 26px/1.55 "Inter", sans-serif;
+    color: rgba(15,61,62,0.65);
+    margin-top: 26px;
+    max-width: 820px;
+  }
+  .s3 .tail {
+    display: flex; justify-content: flex-end;
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(15,61,62,0.45);
+  }
+
+  /* ——————————— Slide 4 · PERK 1 · 10% IN-HOUSE ——————————— */
+  .s4 .bg {
+    background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/turtle-villa-08.jpg');
+    background-position: center;
+  }
+  .s4 .scrim {
+    background:
+      linear-gradient(180deg, rgba(15,61,62,0.25) 0%, rgba(15,61,62,0.05) 30%, rgba(15,61,62,0.78) 75%, rgba(15,61,62,0.96) 100%);
+  }
+  .s4 .content { color: #fff; justify-content: space-between; }
+  .s4 .pager .eyebrow { color: #fff; opacity: 0.85; }
+  .s4 .pager .num { color: rgba(255,255,255,0.6); }
+  .s4 .bottom { display: flex; flex-direction: column; gap: 28px; }
+  .s4 .tag {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .s4 h3 {
+    font: 300 102px/1.02 "Fraunces", Georgia, serif;
+    letter-spacing: -0.012em;
+  }
+  .s4 h3 em { font-style: italic; color: var(--gold); }
+  .s4 .proof {
+    font: 400 28px/1.55 "Inter", sans-serif;
+    color: rgba(255,255,255,0.88);
+    max-width: 820px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.28);
+  }
+  .s4 .stack {
+    display: flex; gap: 14px; margin-top: 6px;
+  }
+  .s4 .chip {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 12px 22px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 999px;
+    color: rgba(255,255,255,0.92);
+  }
+
+  /* ——————————— Slide 5 · PERK 2 · 5% PAY DIRECT ——————————— */
+  .s5 { background: var(--cream); }
+  .s5 .content { justify-content: space-between; }
+  .s5 .pager .eyebrow { opacity: 0.55; }
+  .s5 .top-tag {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+    margin-top: 18px;
+  }
+  .s5 .core {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 46px;
+    flex: 1; justify-content: center;
+  }
+  .s5 .big-pct {
+    display: flex; align-items: baseline; gap: 8px;
+    font: 300 360px/0.85 "Fraunces", Georgia, serif;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .s5 .big-pct .arrow {
+    font-size: 60px;
+    color: var(--gold);
+    margin-left: 14px;
+    vertical-align: top;
+    letter-spacing: 0;
+  }
+  .s5 .big-pct .sign {
+    font-size: 180px;
+    color: var(--gold);
+  }
+  .s5 h3 {
+    font: 300 72px/1.1 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+    max-width: 880px;
+  }
+  .s5 h3 em { font-style: italic; color: var(--peach); }
+  .s5 .breakdown {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    padding-top: 34px;
+    border-top: 1px solid var(--line);
+    width: 100%;
+  }
+  .s5 .cell {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .s5 .cell .k {
+    font: 500 18px/1 "Inter", sans-serif;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: rgba(15,61,62,0.5);
+  }
+  .s5 .cell .v {
+    font: 400 28px/1.3 "Fraunces", serif;
+    color: var(--ink);
+  }
+  .s5 .cell .v em { font-style: italic; }
+
+  /* ——————————— Slide 6 · FREEBIES STACK ——————————— */
+  .s6 { background: var(--cream-soft); }
+  .s6 .content { justify-content: space-between; }
+  .s6 .pager .eyebrow { opacity: 0.55; }
+  .s6 .head {
+    display: flex; flex-direction: column; gap: 22px;
+    margin-top: 20px;
+  }
+  .s6 .kicker {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+  }
+  .s6 h2 {
+    font: 300 78px/1.05 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+    max-width: 820px;
+  }
+  .s6 h2 em { font-style: italic; }
+  .s6 .grid {
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .s6 .tile {
+    background: #fff;
+    border-radius: 22px;
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 36px; align-items: center;
+    box-shadow: 0 18px 40px -24px rgba(15,61,62,0.22), 0 0 0 1px rgba(15,61,62,0.04);
+  }
+  .s6 .tile .icon {
+    width: 92px; height: 92px; border-radius: 24px;
+    background: var(--gold-soft);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink);
+  }
+  .s6 .tile .icon svg { width: 54px; height: 54px; stroke: var(--ink); fill: none; stroke-width: 1.6; }
+  .s6 .tile .body h4 {
+    font: 400 38px/1.1 "Fraunces", Georgia, serif;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .s6 .tile .body p {
+    font: 400 22px/1.4 "Inter", sans-serif;
+    color: rgba(15,61,62,0.65);
+  }
+  .s6 .tile .price {
+    font: 500 32px/1 "Fraunces", serif;
+    font-style: italic;
+    color: var(--gold);
+    background: #111;
+    padding: 14px 22px;
+    border-radius: 12px;
+    letter-spacing: -0.005em;
+  }
+  .s6 .footnote {
+    font: 400 20px/1.4 "Inter", sans-serif;
+    color: rgba(15,61,62,0.55);
+    text-align: center;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    margin-top: 8px;
+  }
+  .s6 .footnote em { font-style: italic; color: var(--peach); }
+
+  /* ——————————— Slide 7 · THE LOTTERY ——————————— */
+  .s7 { background: var(--cream); }
+  .s7 .content { padding: 80px 85px; justify-content: space-between; }
+  .s7 .pager .eyebrow { opacity: 0.55; }
+  .s7 .head {
+    display: flex; flex-direction: column; gap: 22px;
+    margin-top: 18px;
+  }
+  .s7 .kicker {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+  }
+  .s7 h2 {
+    font: 300 76px/1.06 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s7 h2 em { font-style: italic; }
+  .s7 .split {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    flex: 1; align-content: center;
+  }
+  .s7 .card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 38px 36px 34px;
+    display: flex; flex-direction: column; gap: 18px;
+    box-shadow: 0 24px 50px -24px rgba(15,61,62,0.24), 0 0 0 1px rgba(15,61,62,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+  .s7 .card::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, var(--gold), var(--peach));
+  }
+  .s7 .card .badge {
+    font: 500 18px/1 "Inter", sans-serif;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--gold);
+    background: #111;
+    padding: 10px 16px;
+    border-radius: 999px;
+    align-self: flex-start;
+  }
+  .s7 .card h4 {
+    font: 400 52px/1.05 "Fraunces", Georgia, serif;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .s7 .card .arrow {
+    font: 500 20px/1 "JetBrains Mono", monospace;
+    color: var(--peach);
+    letter-spacing: 0.04em;
+  }
+  .s7 .card p {
+    font: 400 22px/1.5 "Inter", sans-serif;
+    color: rgba(15,61,62,0.72);
+  }
+  .s7 .card p em { font-style: italic; color: var(--ink); }
+  .s7 .card .note {
+    margin-top: auto;
+    font: 500 16px/1 "Inter", sans-serif;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(15,61,62,0.45);
+    padding-top: 16px;
+    border-top: 1px solid rgba(15,61,62,0.08);
+  }
+  .s7 .sig {
+    font: 400 26px/1.4 "Fraunces", serif;
+    font-style: italic;
+    color: rgba(15,61,62,0.65);
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .s7 .sig strong { color: var(--peach); font-weight: 500; }
+
+  /* ——————————— Slide 8 · THE REAL MATH ——————————— */
+  .s8 { background: #0a0a0a; color: #fff; }
+  .s8::before {
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(70% 50% at 50% 15%, rgba(250,183,2,0.08) 0%, rgba(250,183,2,0) 60%),
+      radial-gradient(40% 30% at 80% 100%, rgba(232,153,122,0.10) 0%, rgba(232,153,122,0) 70%);
+  }
+  .s8 .content { justify-content: space-between; }
+  .s8 .pager .eyebrow { color: var(--gold); opacity: 0.9; }
+  .s8 .pager .num { color: rgba(255,255,255,0.45); }
+  .s8 .head {
+    display: flex; flex-direction: column; gap: 18px;
+    margin-top: 16px;
+  }
+  .s8 .kicker {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .s8 h2 {
+    font: 300 66px/1.1 "Fraunces", Georgia, serif;
+    letter-spacing: -0.008em;
+  }
+  .s8 h2 em { font-style: italic; color: var(--gold); }
+  .s8 .ledger {
+    display: flex; flex-direction: column;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.14);
+  }
+  .s8 .line {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 16px 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .s8 .line .sign {
+    font: 500 28px/1 "JetBrains Mono", monospace;
+    color: var(--gold);
+    text-align: center;
+  }
+  .s8 .line .what {
+    font: 400 26px/1.25 "Inter", sans-serif;
+    color: rgba(255,255,255,0.92);
+  }
+  .s8 .line .what em { font-style: italic; color: rgba(255,255,255,0.65); font-weight: 400; }
+  .s8 .line .tag {
+    font: 500 18px/1 "Inter", sans-serif;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(232,194,150,0.7);
+  }
+  .s8 .line.possible .sign { color: var(--apricot); opacity: 0.85; }
+  .s8 .line.possible .tag { color: rgba(232,153,122,0.75); }
+  .s8 .closer {
+    margin-top: 8px;
+    padding-top: 32px;
+    border-top: 2px solid var(--gold);
+  }
+  .s8 .closer p {
+    font: 300 52px/1.15 "Fraunces", Georgia, serif;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: -0.005em;
+  }
+  .s8 .closer .sub {
+    font: 400 22px/1.4 "Inter", sans-serif;
+    color: rgba(255,255,255,0.6);
+    margin-top: 16px;
+    font-style: normal;
+    letter-spacing: 0.02em;
+  }
+
+  /* ——————————— Slide 9 · CTA ——————————— */
+  .s9 .bg {
+    background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/Gecco-Villa-Header.jpg');
+    background-position: center;
+  }
+  .s9 .scrim {
+    background:
+      linear-gradient(180deg, rgba(15,61,62,0.40) 0%, rgba(15,61,62,0.22) 30%, rgba(61,53,72,0.68) 68%, rgba(15,61,62,0.96) 100%);
+  }
+  .s9 .content { color: #fff; justify-content: space-between; }
+  .s9 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s9 .top .logo { font: 300 38px/1 "Fraunces", serif; font-style: italic; }
+  .s9 .top .page { font-size: 22px; letter-spacing: 0.32em; opacity: 0.8; }
+  .s9 .cta { text-align: center; }
+  .s9 .cta .kicker {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+  .s9 .cta h3 {
+    font: 300 100px/1.04 "Fraunces", Georgia, serif;
+    font-style: italic;
+    letter-spacing: -0.012em;
+  }
+  .s9 .cta h3 .ne { font-style: normal; }
+  .s9 .cta .sub {
+    margin-top: 30px;
+    font: 400 28px/1.4 "Inter", sans-serif;
+    color: rgba(255,255,255,0.82);
+    max-width: 680px;
+    margin-left: auto; margin-right: auto;
+  }
+  .s9 .cta .sub em { font-style: italic; color: var(--apricot); }
+  .s9 .btn {
+    display: inline-block; margin-top: 44px;
+    padding: 32px 60px;
+    background: var(--gold); color: #111;
+    border-radius: 999px;
+    font: 600 26px/1 "Inter", sans-serif;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .s9 .footer {
+    display: flex; flex-direction: column; align-items: center; gap: 18px;
+    font: 400 26px/1.4 "Inter", sans-serif;
+    opacity: 0.92;
+  }
+  .s9 .footer .contact { display: flex; gap: 55px; }
+  .s9 .footer .contact span strong {
+    font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+    font-size: 18px; opacity: 0.72;
+    display: block; margin-bottom: 8px;
+  }
+  .s9 .line-caps {
+    font: 500 20px/1 "Inter", sans-serif;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--apricot);
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ——————————— SLIDE 1 · HOOK ——————————— -->
+  <article class="slide s1">
+    <div class="content">
+      <div class="top">
+        <div class="logo">Villas Sabai Jai</div>
+        <div class="kicker">— A CONTRARIAN READ</div>
+      </div>
+      <div class="core">
+        <h1><em>The cheaper price<br>isn't the cheaper stay.</em></h1>
+        <p class="sub">Here's the math nobody shows you.</p>
+      </div>
+      <div class="bottom">
+        <div class="sig">— KOH TAO · THAILAND</div>
+        <div class="swipe">
+          <span>Swipe</span>
+          <svg viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M0 5 H20 M16 1 L20 5 L16 9"/></svg>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ——————————— SLIDE 2 · THE POLL ——————————— -->
+  <article class="slide s2">
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">01 · The Poll</div>
+        <div class="num">ii</div>
+      </div>
+      <div class="head">
+        <div class="kicker">— QUICK QUESTION</div>
+        <h2>Where do you <em>book?</em></h2>
+      </div>
+      <div class="poll-card">
+        <div class="poll-title">
+          <div class="label">Reader poll</div>
+          <div class="n">n ≈ typical</div>
+        </div>
+
+        <div class="row">
+          <div class="name">Booking.com</div>
+          <div class="track"><div class="bar" style="width: 80%;"></div></div>
+          <div class="pct">~47%</div>
+        </div>
+        <div class="row">
+          <div class="name">Airbnb</div>
+          <div class="track"><div class="bar" style="width: 42%;"></div></div>
+          <div class="pct">~24%</div>
+        </div>
+        <div class="row">
+          <div class="name">Agoda</div>
+          <div class="track"><div class="bar" style="width: 20%;"></div></div>
+          <div class="pct">~11%</div>
+        </div>
+        <div class="row highlight">
+          <div class="name">Direct</div>
+          <div class="track"><div class="bar" style="width: 15%;"></div></div>
+          <div class="pct">~8%</div>
+        </div>
+        <div class="row">
+          <div class="name">Other</div>
+          <div class="track"><div class="bar" style="width: 18%;"></div></div>
+          <div class="pct">~10%</div>
+        </div>
+
+        <div class="poll-caption">Guess before swiping →</div>
+        <div class="disclaimer">Illustrative — based on typical traveller surveys.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ——————————— SLIDE 3 · THE TRAP ——————————— -->
+  <article class="slide s3">
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">02 · The Trap</div>
+        <div class="num">iii</div>
+      </div>
+      <div>
+        <div class="kicker">— THE HEADLINE RATE LIES</div>
+        <h2><span class="r">A £10 cheaper room.</span><br><span class="g">A £180 worse trip.</span></h2>
+      </div>
+      <div>
+        <p class="sub">The headline rate is just the first line of the bill.</p>
+        <p class="body">What a booking actually costs — or saves — is the rate, plus the perks, plus how quickly a real person answers when something goes sideways. Platforms optimise one number. We think you should see the other three.</p>
+      </div>
+      <div class="tail">Nine things they don't show you →</div>
+    </div>
+  </article>
+
+  <!-- ——————————— SLIDE 4 · PERK 1 · 10% OFF IN-HOUSE ——————————— -->
+  <article class="slide s4">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">03 · Perk 01 of 09</div>
+        <div class="num">iv</div>
+      </div>
+      <div class="bottom">
+        <span class="tag">10% OFF · IN-HOUSE SERVICES</span>
+        <h3>Every dive.<br>Every massage.<br><em>10% off.</em></h3>
+        <p class="proof">Direct bookers receive 10% off all services offered directly through our estates — no vouchers or codes needed, just mention you booked direct. Discount applied at point of booking the activity.</p>
+        <div class="stack">
+          <span class="chip">Sabai Massage</span>
+          <span class="chip">Diving</span>
+          <span class="chip">Snorkelling</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ——————————— SLIDE 5 · PERK 2 · 5% PAY DIRECT ——————————— -->
+  <article class="slide s5">
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">03 · Perk 02 of 09</div>
+        <div class="num">v</div>
+      </div>
+      <div class="top-tag">— PAY DIRECT · INSTANT SAVING</div>
+      <div class="core">
+        <div class="big-pct"><span class="sign">−</span>5<span class="arrow">%</span></div>
+        <h3>Pay by <em>bank transfer.</em><br>Save 5%. No platform,<br>no card fees.</h3>
+        <div class="breakdown">
+          <div class="cell">
+            <div class="k">How</div>
+            <div class="v"><em>International bank transfer</em></div>
+          </div>
+          <div class="cell">
+            <div class="k">Currencies</div>
+            <div class="v">THB · USD · EUR</div>
+          </div>
+          <div class="cell">
+            <div class="k">When</div>
+            <div class="v"><em>Within 3 working days</em> of confirmation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ——————————— SLIDE 6 · FREEBIES STACK ——————————— -->
+  <article class="slide s6">
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">03 · Perks 03–05 of 09</div>
+        <div class="num">vi</div>
+      </div>
+      <div class="head">
+        <div class="kicker">— THE FREEBIES STACK</div>
+        <h2>Three things platforms<br><em>won't throw in.</em></h2>
+      </div>
+      <div class="grid">
+
+        <div class="tile">
+          <div class="icon">
+            <svg viewBox="0 0 64 64">
+              <path d="M6 42 L20 28 L32 36 L44 24 L58 36"/>
+              <path d="M6 50 L58 50"/>
+              <circle cx="20" cy="28" r="3"/>
+              <circle cx="44" cy="24" r="3"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h4>Pier transfer</h4>
+            <p>Mae Haad pier to villa, both ways. Send us your ferry time — we're there when it docks.</p>
+          </div>
+          <div class="price">Free</div>
+        </div>
+
+        <div class="tile">
+          <div class="icon">
+            <svg viewBox="0 0 64 64">
+              <ellipse cx="22" cy="28" rx="11" ry="9"/>
+              <ellipse cx="42" cy="28" rx="11" ry="9"/>
+              <path d="M33 28 Q32 34 32 40 L32 54"/>
+              <path d="M28 54 L36 54"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h4>Masks &amp; snorkels</h4>
+            <p>Blacktip reef sharks and sea turtles off the cape. One set per guest, cleaned and ready at check-in.</p>
+          </div>
+          <div class="price">Free</div>
+        </div>
+
+        <div class="tile">
+          <div class="icon">
+            <svg viewBox="0 0 64 64">
+              <rect x="12" y="18" width="40" height="30" rx="4"/>
+              <path d="M12 30 L52 30"/>
+              <path d="M18 18 L18 10 M46 18 L46 10"/>
+              <path d="M18 48 L18 56 M46 48 L46 56"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h4>Baby cot or high chair</h4>
+            <p>Travelling with a toddler? Request at booking — one fewer thing to pack.</p>
+          </div>
+          <div class="price">Free</div>
+        </div>
+
+      </div>
+      <div class="footnote">Platform fine print: <em>"contact host for equipment."</em>  Our fine print: yes, it's already in your villa.</div>
+    </div>
+  </article>
+
+  <!-- ——————————— SLIDE 7 · THE LOTTERY ——————————— -->
+  <article class="slide s7">
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">03 · Perks 06–07 of 09</div>
+        <div class="num">vii</div>
+      </div>
+      <div class="head">
+        <div class="kicker">— THE DIRECT-BOOKER LOTTERY</div>
+        <h2>Sometimes direct bookers<br><em>get more villa</em> than they booked.</h2>
+      </div>
+
+      <div class="split">
+
+        <div class="card">
+          <span class="badge">Scenario 01</span>
+          <h4>Villa Upgrade.</h4>
+          <div class="arrow">better villa free on your dates → you get it</div>
+          <p>When a larger or higher-category villa is free on your dates and you've booked direct, we'll always try to place you in it at <em>no extra cost</em>. Never guaranteed. Always prioritised for direct bookers.</p>
+          <div class="note">— subject to availability</div>
+        </div>
+
+        <div class="card">
+          <span class="badge">Scenario 02</span>
+          <h4>Extra Bedroom.</h4>
+          <div class="arrow">your villa has unused rooms → they're yours</div>
+          <p>Book for 4 on a platform? You get 2 bedrooms. Book direct? We give you access to a <em>third</em> if it's free within the same villa. Great for kids in their own room.</p>
+          <div class="note">— request at time of booking</div>
+        </div>
+
+      </div>
+
+      <p class="sig">Two things a platform <strong>literally cannot offer you.</strong></p>
+    </div>
+  </article>
+
+  <!-- ——————————— SLIDE 8 · THE REAL MATH ——————————— -->
+  <article class="slide s8">
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">04 · The Real Math</div>
+        <div class="num">viii</div>
+      </div>
+      <div class="head">
+        <div class="kicker">— THE RUNNING TALLY</div>
+        <h2>Add the <em>unshown</em> lines back in.</h2>
+      </div>
+      <div class="ledger">
+
+        <div class="line">
+          <div class="sign">+</div>
+          <div class="what">10% off <em>— every dive, every course</em></div>
+          <div class="tag">In-house</div>
+        </div>
+        <div class="line">
+          <div class="sign">+</div>
+          <div class="what">10% off <em>— every Sabai Massage treatment</em></div>
+          <div class="tag">In-house</div>
+        </div>
+        <div class="line">
+          <div class="sign">+</div>
+          <div class="what">5% pay-direct <em>— bank transfer, no card fees</em></div>
+          <div class="tag">Instant</div>
+        </div>
+        <div class="line">
+          <div class="sign">+</div>
+          <div class="what">Free pier transfer <em>— Mae Haad, both ways</em></div>
+          <div class="tag">Included</div>
+        </div>
+        <div class="line">
+          <div class="sign">+</div>
+          <div class="what">Free masks &amp; snorkels <em>— one set per guest</em></div>
+          <div class="tag">Included</div>
+        </div>
+        <div class="line">
+          <div class="sign">+</div>
+          <div class="what">Free baby cot or high chair <em>— travelling light</em></div>
+          <div class="tag">Family</div>
+        </div>
+        <div class="line possible">
+          <div class="sign">+</div>
+          <div class="what">Villa upgrade <em>— possible on your dates</em></div>
+          <div class="tag">Possible</div>
+        </div>
+        <div class="line possible">
+          <div class="sign">+</div>
+          <div class="what">Extra bedroom <em>— possible if your villa has one free</em></div>
+          <div class="tag">Possible</div>
+        </div>
+        <div class="line">
+          <div class="sign">+</div>
+          <div class="what">Priority WhatsApp <em>— the owner personally responds</em></div>
+          <div class="tag">Personal</div>
+        </div>
+
+      </div>
+      <div class="closer">
+        <p><em>Direct wins by more than just the headline rate.</em></p>
+        <div class="sub">— every one of these is zero on a third-party platform.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ——————————— SLIDE 9 · CTA ——————————— -->
+  <article class="slide s9">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">Villas Sabai Jai</div>
+        <div class="page">09 / 09</div>
+      </div>
+      <div class="cta">
+        <div class="kicker">— NEXT TIME YOU'RE ABOUT TO BOOK</div>
+        <h3><span class="ne">Always ask:</span><br>can I just <em>book direct?</em></h3>
+        <p class="sub">We respond in <em>hours, not days.</em>  The owner personally answers most messages — no call centre, no chatbot.</p>
+        <a class="btn" href="https://www.villasabaijai.com">villasabaijai.com</a>
+      </div>
+      <div class="footer">
+        <div class="line-caps">— BOOK DIRECT · UNLOCK THE PERKS</div>
+        <div class="contact">
+          <span><strong>WhatsApp</strong>+66 92 594 7517</span>
+          <span><strong>Instagram</strong>instagram.com/villasabaijai</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</body>
+</html>
