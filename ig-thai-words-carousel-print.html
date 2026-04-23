@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Villas Sabai Jai — 5 Thai Words Carousel (Print)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+
+  :root {
+    --cream:      #F4EDE1;
+    --cream-soft: #FAF6EC;
+    --ink:        #0F3D3E;
+    --ink-soft:   #1f4f50;
+    --plum:       #3D3548;
+    --peach:      #E8997A;
+    --apricot:    #E8C296;
+    --gold:       #FAB702;
+    --line:       rgba(15,61,62,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: #fff; }
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; }
+
+  .thai {
+    font-family: "Noto Serif Thai", "Noto Sans Thai", "Fraunces", serif;
+    font-feature-settings: "liga" 1;
+  }
+
+  .slide {
+    width: 1080px; height: 1350px;
+    page-break-after: always; break-after: page;
+    position: relative; isolation: isolate; overflow: hidden;
+    background: var(--cream); color: var(--ink);
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+
+  .bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+  .scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .content {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; flex-direction: column;
+    padding: 80px 85px;
+  }
+
+  .eyebrow { font: 500 25px/1 "Inter", sans-serif; letter-spacing: 0.32em; text-transform: uppercase; }
+  .pager { display: flex; justify-content: space-between; align-items: baseline; }
+  .pager .num { font: 300 35px/1 "Fraunces", serif; font-style: italic; opacity: 0.5; }
+
+  /* ———— Slide 1 — COVER ———— */
+  .s1 { background: var(--cream); color: var(--ink); }
+  .s1::before {
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(65% 55% at 15% 0%, rgba(232,194,150,0.38), transparent 60%),
+      radial-gradient(55% 50% at 100% 100%, rgba(232,153,122,0.28), transparent 60%);
+  }
+  .s1 .content { justify-content: space-between; }
+  .s1 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s1 .logo { font: 300 38px/1 "Fraunces", serif; font-style: italic; letter-spacing: 0.02em; }
+  .s1 .tag { font-size: 22px; letter-spacing: 0.32em; opacity: 0.65; }
+
+  .s1 .hook .kicker {
+    font-size: 25px; letter-spacing: 0.32em; opacity: 0.65; margin-bottom: 45px;
+    color: var(--peach);
+  }
+  .s1 .hook h2 {
+    font: 300 160px/0.95 "Fraunces", Georgia, serif;
+    letter-spacing: -0.02em;
+    color: var(--gold);
+  }
+  .s1 .hook h2 em { font-style: italic; display: block; color: var(--ink); }
+
+  .s1 .thai-line {
+    margin-top: 60px;
+    padding-top: 38px;
+    border-top: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .s1 .thai-line .th {
+    font: 500 86px/1 "Noto Serif Thai", serif;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+  .s1 .thai-line .rom {
+    font: 300 40px/1 "Fraunces", serif;
+    font-style: italic;
+    color: rgba(15,61,62,0.55);
+    letter-spacing: 0.05em;
+  }
+
+  .s1 .swipe {
+    display: flex; align-items: center; gap: 20px;
+    font-size: 22px; letter-spacing: 0.28em; opacity: 0.55;
+    text-transform: uppercase; font-weight: 500;
+  }
+  .s1 .swipe svg { width: 55px; height: 22px; }
+
+  /* ———— Word slides (common) ———— */
+  .word-slide {
+    display: grid;
+    grid-template-rows: 720px 630px;
+    background: var(--cream);
+  }
+  .word-slide .top-half {
+    position: relative;
+    background: var(--cream);
+    display: flex; flex-direction: column;
+    padding: 70px 85px 0;
+    overflow: hidden;
+  }
+  .word-slide .top-half::after {
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(55% 60% at 90% 10%, rgba(232,194,150,0.35), transparent 55%),
+      radial-gradient(50% 55% at 5% 100%, rgba(232,153,122,0.20), transparent 55%);
+    pointer-events: none; z-index: 0;
+  }
+  .word-slide .top-half > * { position: relative; z-index: 1; }
+  .word-slide .head-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .word-slide .head-row .eyebrow { color: var(--peach); }
+  .word-slide .head-row .num { font: 300 35px/1 "Fraunces", serif; font-style: italic; opacity: 0.5; }
+
+  .word-slide .thai-big {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    font: 400 360px/0.9 "Noto Serif Thai", serif;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    padding-bottom: 20px;
+  }
+  .word-slide .thai-big.small { font-size: 280px; }
+  .word-slide .thai-big.xsmall { font-size: 220px; }
+
+  .word-slide .inset {
+    position: absolute;
+    width: 170px; height: 170px;
+    bottom: 30px; right: 70px;
+    border-radius: 18px;
+    background-size: cover; background-position: center;
+    box-shadow: 0 24px 56px -18px rgba(15,61,62,0.55);
+    z-index: 2;
+    border: 5px solid var(--cream);
+  }
+
+  .word-slide .bottom-half {
+    background: var(--ink);
+    color: #fff;
+    padding: 70px 85px 70px;
+    display: flex; flex-direction: column; gap: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .word-slide .bottom-half::before {
+    content:""; position: absolute; top: -1px; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--peach) 30%, var(--apricot) 70%, transparent);
+    opacity: 0.7;
+  }
+  .word-slide .rom {
+    font: 300 100px/1 "Fraunces", Georgia, serif;
+    font-style: italic;
+    color: var(--apricot);
+    letter-spacing: -0.01em;
+  }
+  .word-slide .meaning {
+    font: 400 42px/1.25 "Fraunces", Georgia, serif;
+    color: #fff;
+  }
+  .word-slide .meaning em { font-style: italic; color: var(--apricot); }
+  .word-slide .body-p {
+    font: 400 28px/1.55 "Inter", sans-serif;
+    color: rgba(255,255,255,0.78);
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.22);
+    max-width: 820px;
+  }
+  .word-slide .body-p em { font-style: italic; color: var(--apricot); }
+
+  /* Slide 2 — SABAI JAI */
+  .s2 .thai-big { font-size: 300px; }
+  .s2 .inset { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/Boutique-Pool-Villas.jpg'); }
+
+  /* Slide 3 — MAI PEN RAI */
+  .s3 .thai-big { font-size: 260px; }
+
+  /* Slide 4 — SABAI SABAI */
+  .s4 .thai-big { font-size: 240px; }
+  .s4 .inset { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/Turtle-Villa-Header.jpg'); }
+
+  /* Slide 5 — AROY */
+  .s5 .thai-big { font-size: 380px; }
+
+  /* Slide 6 — JAI YEN */
+  .s6 .thai-big { font-size: 300px; }
+  .s6 .inset { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/turtle-villa-08.jpg'); }
+
+  /* ———— Slide 7 — WHY IT MATTERS ———— */
+  .s7 {
+    background:
+      linear-gradient(180deg, rgba(244,237,225,0.96) 0%, rgba(244,237,225,1) 100%),
+      url('https://www.villasabaijai.com/wp-content/uploads/2022/08/Spacious-Villas-on-Koh-Tao.jpg') center/cover;
+    color: var(--ink);
+  }
+  .s7 .content { justify-content: space-between; }
+  .s7 .pager .eyebrow { color: var(--peach); }
+  .s7 .core {
+    display: flex; flex-direction: column;
+    justify-content: center; flex: 1;
+    gap: 40px;
+  }
+  .s7 .kicker {
+    font: 500 24px/1 "Inter", sans-serif;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--peach);
+  }
+  .s7 h3 {
+    font: 300 88px/1.1 "Fraunces", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  .s7 h3 em { font-style: italic; color: var(--ink-soft); }
+  .s7 .body-p {
+    font: 400 30px/1.6 "Inter", sans-serif;
+    color: rgba(15,61,62,0.72);
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+    max-width: 830px;
+  }
+  .s7 .sig {
+    font: 500 22px/1 "Inter", sans-serif;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: rgba(15,61,62,0.5);
+  }
+
+  /* ———— Slide 8 — CTA ———— */
+  .s8 .bg { background-image: url('https://www.villasabaijai.com/wp-content/uploads/2022/08/Gecco-Villa-Header.jpg'); }
+  .s8 .scrim {
+    background:
+      linear-gradient(180deg, rgba(15,61,62,0.55) 0%, rgba(61,53,72,0.50) 35%, rgba(15,61,62,0.80) 75%, rgba(15,61,62,0.96) 100%);
+  }
+  .s8 .content { color: #fff; justify-content: space-between; }
+  .s8 .top { display: flex; justify-content: space-between; align-items: center; }
+  .s8 .top .logo { font: 300 38px/1 "Fraunces", serif; font-style: italic; }
+  .s8 .top .page { font-size: 22px; letter-spacing: 0.32em; opacity: 0.8; }
+  .s8 .cta { text-align: center; }
+  .s8 .cta .eyebrow {
+    font-size: 25px; letter-spacing: 0.32em; opacity: 0.85;
+    color: var(--apricot);
+    margin-bottom: 32px;
+  }
+  .s8 .cta .thai-cta {
+    font: 500 64px/1.1 "Noto Serif Thai", serif;
+    color: var(--apricot);
+    margin-bottom: 22px;
+    letter-spacing: 0.01em;
+    padding: 0 40px;
+  }
+  .s8 .cta h3 {
+    font: 300 96px/1.04 "Fraunces", Georgia, serif;
+  }
+  .s8 .cta h3 em { font-style: italic; color: var(--apricot); }
+  .s8 .cta .sub {
+    margin-top: 26px;
+    font: 400 28px/1.4 "Inter", sans-serif;
+    color: rgba(255,255,255,0.82);
+    max-width: 680px;
+    margin-left: auto; margin-right: auto;
+  }
+  .s8 .btn {
+    display: inline-block; margin-top: 50px;
+    padding: 32px 62px;
+    background: var(--gold); color: #111;
+    border-radius: 999px;
+    font: 600 26px/1 "Inter", sans-serif;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .s8 .footer {
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    font: 400 24px/1.4 "Inter", sans-serif; opacity: 0.9;
+  }
+  .s8 .contact { display: flex; gap: 45px; }
+  .s8 .contact span strong {
+    font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+    font-size: 20px; opacity: 0.7;
+    display: block; margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- SLIDE 1 — COVER -->
+  <article class="slide s1">
+    <div class="content">
+      <div class="top">
+        <div class="logo">Villas Sabai Jai</div>
+        <div class="tag">KOH TAO · THAILAND</div>
+      </div>
+      <div class="hook">
+        <div class="kicker">— VOCABULARY FROM THE VILLA</div>
+        <h2>5 Thai words<em>you'll leave with.</em></h2>
+        <div class="thai-line">
+          <div class="th">สบายใจ</div>
+          <div class="rom">sabai jai — where it begins</div>
+        </div>
+      </div>
+      <div class="swipe" style="align-self:flex-end;">
+        <span>SWIPE</span>
+        <svg viewBox="0 0 22 10" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M0 5 H20 M16 1 L20 5 L16 9"/>
+        </svg>
+      </div>
+    </div>
+  </article>
+
+  <!-- SLIDE 2 — WORD 1: SABAI JAI -->
+  <article class="slide word-slide s2">
+    <div class="top-half">
+      <div class="head-row">
+        <div class="eyebrow">Word 01 · The Name</div>
+        <div class="num">ii</div>
+      </div>
+      <div class="thai-big thai">สบายใจ</div>
+      <div class="inset"></div>
+    </div>
+    <div class="bottom-half">
+      <div class="rom">sabai jai</div>
+      <div class="meaning"><em>"happy and comfortable."</em></div>
+      <p class="body-p">The Thai phrase the founders chose as the name of the place — and the guiding principle behind everything we built here. You'll hear it in every greeting from the staff, and you'll feel it somewhere around your second coffee on the terrace.</p>
+    </div>
+  </article>
+
+  <!-- SLIDE 3 — WORD 2: MAI PEN RAI -->
+  <article class="slide word-slide s3">
+    <div class="top-half">
+      <div class="head-row">
+        <div class="eyebrow">Word 02 · The Attitude</div>
+        <div class="num">iii</div>
+      </div>
+      <div class="thai-big thai">ไม่เป็นไร</div>
+    </div>
+    <div class="bottom-half">
+      <div class="rom">mai pen rai</div>
+      <div class="meaning"><em>"never mind / no worries / it's okay."</em></div>
+      <p class="body-p">The phrase you'll hear from Tom at least once a day — and from every taxi driver, every waiter, every dive master on Koh Tao. It's the island's default response to almost anything. A small philosophical gift from Thailand, disguised as small talk.</p>
+    </div>
+  </article>
+
+  <!-- SLIDE 4 — WORD 3: SABAI SABAI -->
+  <article class="slide word-slide s4">
+    <div class="top-half">
+      <div class="head-row">
+        <div class="eyebrow">Word 03 · The State</div>
+        <div class="num">iv</div>
+      </div>
+      <div class="thai-big thai">สบายสบาย</div>
+      <div class="inset"></div>
+    </div>
+    <div class="bottom-half">
+      <div class="rom">sabai sabai</div>
+      <div class="meaning"><em>"comfortable comfortable — easy, relaxed, chill."</em></div>
+      <p class="body-p">Doubling the word in Thai makes it softer, not stronger. It's the state you slide into by day three — somewhere between the morning swim and the afternoon nap. Guests start using it unprompted. It becomes the answer to <em>"how was your day?"</em></p>
+    </div>
+  </article>
+
+  <!-- SLIDE 5 — WORD 4: AROY -->
+  <article class="slide word-slide s5">
+    <div class="top-half">
+      <div class="head-row">
+        <div class="eyebrow">Word 04 · The Compliment</div>
+        <div class="num">v</div>
+      </div>
+      <div class="thai-big thai">อร่อย</div>
+    </div>
+    <div class="bottom-half">
+      <div class="rom">aroy</div>
+      <div class="meaning"><em>"delicious."</em></div>
+      <p class="body-p">What you'll say to the private chef after the first bite of green curry. What your kids will demand more of at breakfast. What you'll hear from the table next door when the mango sticky rice arrives. A one-word review — and on this island, you'll use it a lot.</p>
+    </div>
+  </article>
+
+  <!-- SLIDE 6 — WORD 5: JAI YEN -->
+  <article class="slide word-slide s6">
+    <div class="top-half">
+      <div class="head-row">
+        <div class="eyebrow">Word 05 · The Philosophy</div>
+        <div class="num">vi</div>
+      </div>
+      <div class="thai-big thai">ใจเย็น</div>
+      <div class="inset"></div>
+    </div>
+    <div class="bottom-half">
+      <div class="rom">jai yen</div>
+      <div class="meaning"><em>"cool heart — stay calm, keep your composure."</em></div>
+      <p class="body-p">A life philosophy in two syllables. Also what the dive instructor will murmur if your breathing quickens at 18 metres. <em>Jai yen</em> isn't just "don't panic" — it's the quiet conviction that nothing worth doing is done in a hurry.</p>
+    </div>
+  </article>
+
+  <!-- SLIDE 7 — WHY IT MATTERS -->
+  <article class="slide s7">
+    <div class="content">
+      <div class="pager">
+        <div class="eyebrow">07 · Why It Matters</div>
+        <div class="num">vii</div>
+      </div>
+      <div class="core">
+        <div class="kicker">— MORE THAN VOCABULARY</div>
+        <h3>Thai isn't just words.<br>It's the <em>emotional operating system</em> of the place.</h3>
+        <p class="body-p">Every one of these five phrases is really about the same thing — a relationship with time, with other people, with your own nervous system. You don't have to study Thai to stay with us. But by the time you leave, a few of these words will have quietly moved in. That's the <em>sabai jai</em> ethos: not a service standard, a way of being.</p>
+        <div class="sig">— VILLAS SABAI JAI · KOH TAO</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- SLIDE 8 — CTA -->
+  <article class="slide s8">
+    <div class="bg"></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">Villas Sabai Jai</div>
+        <div class="page">08 / 08</div>
+      </div>
+      <div class="cta">
+        <div class="eyebrow">— YOUR TURN</div>
+        <div class="thai-cta thai">มาเรียนอีกห้าคำ</div>
+        <h3>Come learn the <em>other five.</em></h3>
+        <p class="sub">Koh Tao — Turtle Island. A private cape, three boutique villas, and a slow-motion Thai vocabulary lesson hiding inside a holiday.</p>
+        <a class="btn" href="https://instagram.com/villasabaijai">@villasabaijai</a>
+      </div>
+      <div class="footer">
+        <div class="contact">
+          <span><strong>WhatsApp</strong>+66 92 594 7517</span>
+          <span><strong>Book Direct</strong>villasabaijai.com</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</body>
+</html>
