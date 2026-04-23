@@ -121,15 +121,25 @@ We handle that part.
 
 ## Best Way To Give Feedback
 
-For the fastest workflow, the client should:
+The easiest client workflow is still:
 
-1. Review the exported slides in order.
-2. Comment using slide numbers.
-3. Keep each comment specific.
-4. Separate must-fix items from optional ideas.
-5. Confirm when a version is approved.
+HTML source -> export images -> client comments on images
 
-Good feedback example:
+The client should not comment on the HTML itself unless they are technical and specifically want to work that way.
+
+For this project, Figma is the best overall review tool.
+
+Why Figma works best:
+
+- we keep building in HTML
+- we export each slide or frame as a PNG
+- we place those PNGs into one Figma file
+- the client clicks directly on any area and leaves comments
+- we update the HTML source after feedback
+
+That keeps the production workflow clean while making review easy for the client.
+
+Recommended feedback example:
 
 - Slide 01: change headline to "Your private Koh Tao escape"
 - Slide 03: this image feels too dark
@@ -147,28 +157,32 @@ If the client is not technical, they should not edit the HTML directly.
 
 Better options are:
 
-- comment on preview images
+- comment on exported images in Figma
 - edit copy in a shared Google Doc
 - replace files in a shared asset folder
 
-If the client really wants self-editing, we can prepare a simpler client-editable version later in:
+Tool recommendation by use case:
 
-- Figma
-- Google Slides
-- PowerPoint
+- Figma: best overall for pinned comments on each section of an image
+- Canva: easier for some non-technical clients, but weaker for serious review workflows
+- Direct HTML comments: not recommended for most clients because it gets messy fast
 
-But the main production source should remain in HTML so edits stay consistent and export-ready.
+If the client really wants self-editing, we can prepare a simpler client-editable version later in Figma, Google Slides, or PowerPoint.
+
+The main production source should still remain in HTML so edits stay consistent and export-ready.
 
 ## Internal Working Model
 
 Our normal process is:
 
 1. HTML is the master source.
-2. Client assets are stored clearly.
-3. Generated assets are stored separately.
-4. Exports are created for review.
-5. Feedback is applied to source.
-6. Final files are packaged for delivery.
+2. AI can generate or refine the HTML template.
+3. Client assets are stored clearly.
+4. Generated assets are stored separately.
+5. Exports are created as review images.
+6. The client comments in Figma.
+7. Feedback is applied to the HTML source.
+8. Final files are packaged for delivery.
 
 ## Repo Notes
 
@@ -182,12 +196,13 @@ Important project guidance is also documented here:
 For the client, this process should feel simple:
 
 - send content
-- review visuals
-- comment
+- review exported visuals
+- comment in Figma
 - approve
 
 For us, the workflow stays structured:
 
 - build in HTML
+- export review images
 - revise in HTML
 - export final assets cleanly
